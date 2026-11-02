@@ -237,6 +237,32 @@ h1 { margin-top: clamp(10px, 1.8svh, 22px); font-size: clamp(1.9rem, 9.6vw, 4.5r
   .foot { animation-name: rise-foot; }
   @keyframes rise-foot { from { opacity: 0; } to { opacity: 1; } }
 }
+/* ---------- Sound toggle ---------- */
+.topbar { position: fixed; z-index: 20; top: calc(14px + env(safe-area-inset-top)); right: calc(16px + env(safe-area-inset-right)); }
+.sound {
+  display: inline-flex; align-items: center; gap: 8px; height: 38px; min-width: 38px; padding: 0 11px; justify-content: center;
+  font: 500 12px/1 var(--font); letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-soft);
+  background: rgba(23, 19, 56, 0.55); border: 1px solid rgba(244, 241, 255, 0.2); border-radius: 999px;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+  animation: rise 0.9s var(--ease) 1.2s both;
+}
+.sound[hidden] { display: none; }
+.sound:hover { color: var(--white); border-color: rgba(244, 241, 255, 0.4); }
+.sound svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.sound .spk { fill: currentColor; fill-opacity: 0.18; }
+.sound .slash { opacity: 0; } .sound .waves { opacity: 1; }
+.sound[data-state="off"] .slash { opacity: 1; } .sound[data-state="off"] .waves { opacity: 0; }
+.sound[data-state="playing"] { color: var(--white); border-color: rgba(118, 87, 246, 0.7); }
+.sound[data-state="waiting"] { color: var(--white); border-color: rgba(118, 87, 246, 0.7); animation: rise 0.9s var(--ease) 1.2s both, nudge 2.8s ease-in-out 2.4s infinite; }
+.sound[data-state="waiting"] .waves { opacity: 0.45; }
+@keyframes nudge { 0%, 100% { box-shadow: 0 0 0 0 rgba(118, 87, 246, 0); } 50% { box-shadow: 0 0 0 5px rgba(118, 87, 246, 0.22); } }
+/* label: always when waiting (so the prompt is discoverable); otherwise only where there is room */
+.sound-label { display: none; }
+.sound[data-state="waiting"] .sound-label { display: inline; }
+@media (min-width: 600px) { .sound-label { display: inline; } }
+@media (max-width: 359px) { .sound[data-state="waiting"] .sound-label { display: none; } }
+
 /* ---------- Doorway light ----------
    Only opacity and transform animate, each on its own layer, so the browser composites them on
    the GPU and never re-rasterises the blurred artwork. Nothing here affects layout. */
@@ -267,5 +293,6 @@ h1 { margin-top: clamp(10px, 1.8svh, 22px); font-size: clamp(1.9rem, 9.6vw, 4.5r
   .brand, .hero, .scene, .clock, .foot { animation: none; opacity: 1; transform: none; }
   .num.tick { animation: none; }
   .lyr, .breathe, .drift, .flicker { animation: none; opacity: 1; transform: none; will-change: auto; }
+  .sound, .sound[data-state="waiting"] { animation: none; opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) and (min-width: 1025px) and (min-aspect-ratio: 5/4) { .foot { transform: translateY(-50%); } }

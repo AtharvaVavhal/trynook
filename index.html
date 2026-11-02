@@ -22,10 +22,25 @@
   <meta name="twitter:description" content="Hostel living. Reimagined. nook launches 4 November 2026.">
   <!-- og:image and og:url intentionally omitted: no official 1200x630 share image exists and the domain is not secured. -->
 
+  <!-- Soundtrack bootstrap: runs during parsing so the first play() attempt happens as early as the browser allows. -->
+  <script src="sound.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip" href="#countdown">Skip to countdown</a>
+
+  <!-- Sound control (also the WCAG 1.4.2 pause mechanism for the autoplaying soundtrack) -->
+  <div class="topbar">
+    <button class="sound" id="sound" type="button" hidden aria-pressed="false" aria-label="Sound" data-state="loading">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path class="spk" d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"/>
+        <path class="waves" d="M15.2 9.2a4 4 0 0 1 0 5.6M17.8 6.8a7.4 7.4 0 0 1 0 10.4"/>
+        <path class="slash" d="M16 9.5l5 5M21 9.5l-5 5"/>
+      </svg>
+      <span class="sound-label">Sound</span>
+    </button>
+    <p class="sr-only" id="sound-status" role="status" aria-live="polite"></p>
+  </div>
 
   <div class="space" aria-hidden="true">
     <div class="grid"></div>
