@@ -117,6 +117,7 @@
       fadeTo(TARGET, FADE_IN);
     }).catch(function (err) {
       starting = false;
+      mark('play-rejected:' + (err && err.name));
       if (err && err.name === 'NotAllowedError') { blocked(fromGesture); }
       else if (err && err.name === 'AbortError') { /* interrupted by a pause(): ignore */ }
       else { unavailable(); }
