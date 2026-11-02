@@ -46,123 +46,243 @@
         <p class="sub">Hostel living. Reimagined.</p>
       </section>
 
-      <!-- The doorway. Decorative; drawn in the reference's own coordinate space (viewBox 380 100 1175 912). -->
+      <!-- The doorway. Decorative; four stacked SVG layers share one coordinate space (viewBox 380 100 1175 912).
+           halo  : violet light on the wall      (breathes)
+           floor : light pooling on the floor    (drifts)
+           base  : geometry, materials, shadows  (static)
+           lamp  : warm bedside light            (flickers) -->
       <div class="scene" aria-hidden="true">
-        <svg viewBox="380 100 1175 912" focusable="false">
-          <defs>
-            <linearGradient id="face" x1="1132" y1="0" x2="1186" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#A28DF9"/>
-              <stop offset="1" stop-color="#7657F6"/>
-            </linearGradient>
-            <linearGradient id="faceV" x1="0" y1="298" x2="0" y2="797" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.22"/>
-              <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0"/>
-              <stop offset="1" stop-color="#171338" stop-opacity="0.25"/>
-            </linearGradient>
-            <linearGradient id="room" x1="0" y1="312" x2="0" y2="797" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#120D2E"/>
-              <stop offset="0.7" stop-color="#1E1648"/>
-              <stop offset="1" stop-color="#2B2063"/>
-            </linearGradient>
-            <linearGradient id="floorIn" x1="0" y1="715" x2="0" y2="797" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2A1F66"/>
-              <stop offset="1" stop-color="#5A44C4"/>
-            </linearGradient>
-            <linearGradient id="rimL" x1="1186" y1="0" x2="1340" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#7657F6" stop-opacity="0.55"/>
-              <stop offset="0.45" stop-color="#7657F6" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="windowSky" x1="0" y1="505" x2="0" y2="613" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#2E2670"/>
-              <stop offset="1" stop-color="#4A3C98"/>
-            </linearGradient>
-            <radialGradient id="lamp" cx="1235" cy="655" r="78" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#FFC987" stop-opacity="0.95"/>
-              <stop offset="0.25" stop-color="#F2A860" stop-opacity="0.5"/>
-              <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="aura" cx="1250" cy="560" r="430" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#7657F6" stop-opacity="0.34"/>
-              <stop offset="0.55" stop-color="#7657F6" stop-opacity="0.1"/>
-              <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="spillFade" x1="1340" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#8E73FA" stop-opacity="0.45"/>
-              <stop offset="0.45" stop-color="#7657F6" stop-opacity="0.15"/>
-              <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
-            </linearGradient>
-            <radialGradient id="floorWash" cx="1250" cy="830" r="560" gradientTransform="translate(1250 830) scale(1 0.42) translate(-1250 -830)" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#7657F6" stop-opacity="0.2"/>
-              <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="blurGlow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
-            <linearGradient id="vfade" x1="0" y1="797" x2="0" y2="1000" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
-            <mask id="spillMask" maskUnits="userSpaceOnUse" x="380" y="780" width="1175" height="232"><rect x="380" y="780" width="1175" height="232" fill="url(#vfade)"/></mask>
-            <filter id="blurWide" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
-            <filter id="blurSoft" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
-            <clipPath id="opening"><path d="M1186 797V389A77 77 0 0 1 1340 389V797Z"/></clipPath>
-          </defs>
+        <div class="art">
 
-          <!-- ambient light behind the doorway -->
-          <rect x="380" y="100" width="1175" height="912" fill="url(#aura)"/>
+          <!-- ===== HALO: the arch lighting the wall ===== -->
+          <div class="lyr lyr-halo">
+            <svg class="breathe" viewBox="380 100 1175 912" focusable="false">
+              <defs>
+                <radialGradient id="wallWash" cx="1236" cy="520" r="430" gradientTransform="translate(1236 520) scale(1 1.15) translate(-1236 -520)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#7657F6" stop-opacity="0.30"/>
+                  <stop offset="0.35" stop-color="#7657F6" stop-opacity="0.15"/>
+                  <stop offset="0.7" stop-color="#7657F6" stop-opacity="0.05"/>
+                  <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="hb1" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="44"/></filter>
+                <filter id="hb2" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="20"/></filter>
+                <filter id="hb3" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="8"/></filter>
+              </defs>
+              <rect x="380" y="100" width="1175" height="797" fill="url(#wallWash)"/>
+              <g fill="none" stroke="#7657F6" stroke-linejoin="round">
+                <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="120" stroke-opacity="0.15" filter="url(#hb1)"/>
+                <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="48" stroke-opacity="0.26" filter="url(#hb2)"/>
+                <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="14" stroke-opacity="0.34" filter="url(#hb3)"/>
+              </g>
+            </svg>
+          </div>
 
-          <!-- large frames around the door -->
-          <path class="outline" d="M988 810V347A243.5 243.5 0 0 1 1475 347V810"/>
-          <path class="outline" d="M1345 596Q1450 522 1555 502"/>
+          <!-- ===== FLOOR: perspective light pool ===== -->
+          <div class="lyr lyr-floor">
+            <svg class="drift" viewBox="380 100 1175 912" focusable="false">
+              <defs>
+                <clipPath id="floorClip"><rect x="380" y="797" width="1175" height="215"/></clipPath>
+                <radialGradient id="fl1" cx="1250" cy="800" r="560" gradientTransform="translate(1250 800) scale(1 0.3) translate(-1250 -800)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#A58BFF" stop-opacity="0.62"/>
+                  <stop offset="0.22" stop-color="#8366F8" stop-opacity="0.38"/>
+                  <stop offset="0.6" stop-color="#7657F6" stop-opacity="0.12"/>
+                  <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="fl2" cx="1262" cy="805" r="240" gradientTransform="translate(1262 805) scale(1 0.2) translate(-1262 -805)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#E4DAFF" stop-opacity="0.8"/>
+                  <stop offset="0.5" stop-color="#B9A6FF" stop-opacity="0.32"/>
+                  <stop offset="1" stop-color="#B9A6FF" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="fl3" cx="1090" cy="858" r="430" gradientTransform="translate(1090 858) scale(1 0.2) translate(-1090 -858)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#8E73FA" stop-opacity="0.2"/>
+                  <stop offset="1" stop-color="#8E73FA" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="fb40" filterUnits="userSpaceOnUse" x="380" y="797" width="1175" height="215"><feGaussianBlur stdDeviation="36"/></filter>
+                <filter id="fb2" filterUnits="userSpaceOnUse" x="1100" y="797" width="320" height="40"><feGaussianBlur stdDeviation="2"/></filter>
+              </defs>
+              <g clip-path="url(#floorClip)">
+                <ellipse cx="1040" cy="975" rx="720" ry="100" fill="#06031A" fill-opacity="0.22" filter="url(#fb40)"/>
+                <rect x="380" y="797" width="1175" height="215" fill="url(#fl1)"/>
+                <rect x="380" y="797" width="1175" height="215" fill="url(#fl3)"/>
+                <rect x="380" y="797" width="1175" height="215" fill="url(#fl2)"/>
+                <ellipse cx="1238" cy="814" rx="96" ry="2.4" fill="#E6DEFF" fill-opacity="0.34" filter="url(#fb2)"/>
+              </g>
+            </svg>
+          </div>
 
-          <!-- floor plane + wall base line -->
-          <rect x="380" y="797" width="1175" height="215" fill="url(#floorWash)"/>
-          <path d="M1340 797H1555" stroke="#F4F1FF" stroke-opacity="0.14" stroke-width="1"/>
+          <!-- ===== BASE: structure, materials, shadows ===== -->
+          <div class="lyr lyr-base">
+            <svg viewBox="380 100 1175 912" focusable="false">
+              <defs>
+                <linearGradient id="face" x1="1132" y1="0" x2="1186" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#AE9AFD"/>
+                  <stop offset="0.3" stop-color="#8A6DF9"/>
+                  <stop offset="0.75" stop-color="#6A4DEA"/>
+                  <stop offset="1" stop-color="#523AC4"/>
+                </linearGradient>
+                <linearGradient id="faceV" x1="0" y1="298" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.2"/>
+                  <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#171338" stop-opacity="0.32"/>
+                </linearGradient>
+                <linearGradient id="rimOuter" x1="0" y1="298" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#EFE9FF" stop-opacity="0.8"/>
+                  <stop offset="1" stop-color="#C9B9FF" stop-opacity="0.35"/>
+                </linearGradient>
+                <linearGradient id="innerHL" x1="0" y1="312" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#F4F1FF" stop-opacity="0.95"/>
+                  <stop offset="0.45" stop-color="#CDBEFF" stop-opacity="0.5"/>
+                  <stop offset="1" stop-color="#CDBEFF" stop-opacity="0.08"/>
+                </linearGradient>
+                <linearGradient id="room" x1="0" y1="312" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#0E0A26"/>
+                  <stop offset="0.7" stop-color="#1B1344"/>
+                  <stop offset="1" stop-color="#281D5E"/>
+                </linearGradient>
+                <linearGradient id="recessTop" x1="0" y1="312" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#05031A" stop-opacity="0.7"/>
+                  <stop offset="1" stop-color="#05031A" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="recessRight" x1="1300" y1="0" x2="1346" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#05031A" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#05031A" stop-opacity="0.22"/>
+                </linearGradient>
+                <linearGradient id="floorIn" x1="0" y1="715" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#271D62"/>
+                  <stop offset="1" stop-color="#5A44C4"/>
+                </linearGradient>
+                <linearGradient id="rimL" x1="1186" y1="0" x2="1340" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#7657F6" stop-opacity="0.5"/>
+                  <stop offset="0.45" stop-color="#7657F6" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="windowSky" x1="0" y1="505" x2="0" y2="613" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#2E2670"/>
+                  <stop offset="1" stop-color="#4A3C98"/>
+                </linearGradient>
+                <radialGradient id="aura" cx="1250" cy="560" r="430" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#7657F6" stop-opacity="0.16"/>
+                  <stop offset="0.6" stop-color="#7657F6" stop-opacity="0.05"/>
+                  <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="refFade" x1="0" y1="797" x2="0" y2="937" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+                <mask id="refMask" maskUnits="userSpaceOnUse" x="1080" y="797" width="320" height="150"><rect x="1080" y="797" width="320" height="150" fill="url(#refFade)"/></mask>
+                <filter id="bl3" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="3"/></filter>
+                <filter id="bl6" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="6"/></filter>
+                <filter id="bl9" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="9"/></filter>
+                <filter id="bl14" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="14"/></filter>
+                <clipPath id="opening"><path d="M1186 797V389A77 77 0 0 1 1340 389V797Z"/></clipPath>
+              </defs>
 
-          <!-- light spilling across the floor -->
-          <g mask="url(#spillMask)"><polygon points="1186,788 1340,798 1330,1012 800,1012 440,852" fill="url(#spillFade)" filter="url(#blurWide)"/></g>
-          <ellipse cx="1262" cy="803" rx="200" ry="20" fill="#C9B9FF" fill-opacity="0.45" filter="url(#blurSoft)"/>
+              <!-- ambient colour in the wall around the portal -->
+              <rect x="380" y="100" width="1175" height="697" fill="url(#aura)"/>
 
-          <!-- room interior -->
-          <g clip-path="url(#opening)">
-            <rect x="1186" y="300" width="160" height="500" fill="url(#room)"/>
-            <!-- wardrobe -->
-            <rect x="1190" y="445" width="78" height="103" fill="#251C57"/>
-            <path d="M1229 445V548M1190 497H1268" stroke="#171338" stroke-width="1.5" stroke-opacity="0.8"/>
-            <rect x="1190" y="441" width="78" height="5" fill="#33276F"/>
-            <!-- bunk bed -->
-            <rect x="1195" y="560" width="4" height="158" fill="#1B1344"/>
-            <rect x="1262" y="560" width="4" height="158" fill="#1B1344"/>
-            <rect x="1195" y="584" width="71" height="5" fill="#2A2062"/>
-            <rect x="1198" y="571" width="64" height="13" rx="3" fill="#B6A9E8" fill-opacity="0.55"/>
-            <ellipse cx="1214" cy="570" rx="12" ry="4.5" fill="#D9D0FA" fill-opacity="0.5"/>
-            <path d="M1268 566V716" stroke="#3A2E78" stroke-width="1.5"/>
-            <path d="M1268 590H1276M1268 614H1276M1268 638H1276M1268 662H1276M1268 686H1276" stroke="#3A2E78" stroke-width="1.5"/>
-            <rect x="1195" y="694" width="108" height="6" fill="#2A2062"/>
-            <rect x="1198" y="681" width="100" height="13" rx="3" fill="#9487D6" fill-opacity="0.24"/>
-            <rect x="1195" y="700" width="4" height="22" fill="#1B1344"/>
-            <!-- window -->
-            <rect x="1296" y="503" width="46" height="110" fill="#14102F"/>
-            <rect x="1300" y="507" width="38" height="102" fill="url(#windowSky)"/>
-            <path d="M1319 507V609M1300 541H1338M1300 575H1338" stroke="#14102F" stroke-width="2.5"/>
-            <!-- plant -->
-            <rect x="1312" y="640" width="16" height="16" rx="2" fill="#1B1344"/>
-            <path d="M1320 640C1304 628 1304 610 1316 596C1318 616 1326 624 1320 640ZM1322 640C1336 626 1338 608 1330 596C1324 614 1318 624 1322 640Z" fill="#2B3C52" fill-opacity="0.85"/>
-            <!-- bedside table + lamp -->
-            <rect x="1222" y="670" width="28" height="32" fill="#1B1344"/>
-            <path d="M1229 647H1243L1247 662H1225Z" fill="#FFCB8E"/>
-            <rect x="1234" y="662" width="3" height="8" fill="#3A2E78"/>
-            <circle cx="1235" cy="655" r="78" fill="url(#lamp)"/>
-            <!-- floor inside -->
-            <path d="M1186 797V716H1346V797Z" fill="url(#floorIn)"/>
-            <path d="M1186 716H1346" stroke="#171338" stroke-opacity="0.5"/>
-            <ellipse cx="1262" cy="796" rx="95" ry="16" fill="#C9B9FF" fill-opacity="0.4"/>
-            <!-- light entering from the lit reveal -->
-            <rect x="1186" y="300" width="160" height="500" fill="url(#rimL)"/>
-          </g>
+              <!-- architectural frames on the wall -->
+              <path class="outline" d="M988 810V347A243.5 243.5 0 0 1 1475 347V810"/>
+              <path class="outline" d="M1345 596Q1450 522 1555 502"/>
+              <path d="M1340 797H1555" stroke="#F4F1FF" stroke-opacity="0.12" stroke-width="1"/>
 
-          <!-- glow, then the lit face of the arch -->
-          <path d="M1132 797V402A104 104 0 0 1 1340 402" fill="none" stroke="#7657F6" stroke-opacity="0.7" stroke-width="22" filter="url(#blurGlow)"/>
-          <path fill-rule="evenodd" fill="url(#face)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
-          <path fill-rule="evenodd" fill="url(#faceV)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
-          <path d="M1132 797V402A104 104 0 0 1 1340 402V797" fill="none" stroke="#E4DBFF" stroke-opacity="0.75" stroke-width="1.5"/>
-          <path d="M1186 797V389A77 77 0 0 1 1340 389" fill="none" stroke="#E4DBFF" stroke-opacity="0.35" stroke-width="1"/>
-        </svg>
+              <!-- cast shadow of the portal on the wall (soft, offset away from the light) -->
+              <path d="M1146 797V404A96 96 0 0 1 1340 404V797Z" transform="translate(22 10)" fill="#06031A" fill-opacity="0.4" filter="url(#bl14)"/>
+
+              <!-- contact shadows where the portal meets the floor -->
+              <ellipse cx="1240" cy="800" rx="170" ry="11" fill="#05021A" fill-opacity="0.3" filter="url(#bl9)"/>
+              <ellipse cx="1236" cy="798.5" rx="116" ry="4.5" fill="#05021A" fill-opacity="0.55" filter="url(#bl3)"/>
+
+              <!-- room interior -->
+              <g clip-path="url(#opening)">
+                <rect x="1186" y="300" width="160" height="500" fill="url(#room)"/>
+                <!-- wardrobe -->
+                <rect x="1190" y="445" width="78" height="103" fill="#221A52"/>
+                <path d="M1229 445V548M1190 497H1268" stroke="#171338" stroke-width="1.5" stroke-opacity="0.8"/>
+                <rect x="1190" y="441" width="78" height="5" fill="#2F256A"/>
+                <!-- bunk bed -->
+                <ellipse cx="1246" cy="545" rx="48" ry="9" fill="#05031A" fill-opacity="0.35" filter="url(#bl6)"/>
+                <rect x="1195" y="560" width="4" height="158" fill="#1B1344"/>
+                <rect x="1262" y="560" width="4" height="158" fill="#1B1344"/>
+                <rect x="1195" y="584" width="71" height="5" fill="#2A2062"/>
+                <rect x="1198" y="571" width="64" height="13" rx="3" fill="#B6A9E8" fill-opacity="0.55"/>
+                <ellipse cx="1214" cy="570" rx="12" ry="4.5" fill="#D9D0FA" fill-opacity="0.5"/>
+                <path d="M1268 566V716" stroke="#3A2E78" stroke-width="1.5"/>
+                <path d="M1268 590H1276M1268 614H1276M1268 638H1276M1268 662H1276M1268 686H1276" stroke="#3A2E78" stroke-width="1.5"/>
+                <rect x="1195" y="694" width="108" height="6" fill="#2A2062"/>
+                <rect x="1198" y="681" width="100" height="13" rx="3" fill="#9487D6" fill-opacity="0.26"/>
+                <rect x="1195" y="700" width="4" height="22" fill="#1B1344"/>
+                <!-- window -->
+                <rect x="1296" y="503" width="46" height="110" fill="#14102F"/>
+                <rect x="1300" y="507" width="38" height="102" fill="url(#windowSky)"/>
+                <path d="M1319 507V609M1300 541H1338M1300 575H1338" stroke="#14102F" stroke-width="2.5"/>
+                <!-- plant -->
+                <rect x="1312" y="640" width="16" height="16" rx="2" fill="#1B1344"/>
+                <path d="M1320 640C1304 628 1304 610 1316 596C1318 616 1326 624 1320 640ZM1322 640C1336 626 1338 608 1330 596C1324 614 1318 624 1322 640Z" fill="#2B3C52" fill-opacity="0.85"/>
+                <!-- bedside table + lamp -->
+                <rect x="1222" y="670" width="28" height="32" fill="#1B1344"/>
+                <path d="M1229 647H1243L1247 662H1225Z" fill="#FFCB8E"/>
+                <rect x="1234" y="662" width="3" height="8" fill="#3A2E78"/>
+                <!-- floor inside + contact shadows under furniture -->
+                <path d="M1186 797V716H1346V797Z" fill="url(#floorIn)"/>
+                <path d="M1186 716H1346" stroke="#171338" stroke-opacity="0.5"/>
+                <ellipse cx="1246" cy="720" rx="64" ry="5" fill="#05031A" fill-opacity="0.5" filter="url(#bl3)"/>
+                <ellipse cx="1236" cy="703" rx="20" ry="3" fill="#05031A" fill-opacity="0.5" filter="url(#bl3)"/>
+                <ellipse cx="1262" cy="796" rx="95" ry="16" fill="#C9B9FF" fill-opacity="0.34"/>
+                <!-- light entering from the lit reveal -->
+                <rect x="1186" y="300" width="160" height="500" fill="url(#rimL)"/>
+                <!-- depth: dark recess at the head and far jamb, ambient occlusion along the frame -->
+                <rect x="1186" y="300" width="160" height="260" fill="url(#recessTop)"/>
+                <rect x="1296" y="300" width="50" height="500" fill="url(#recessRight)"/>
+                <path d="M1186 797V389A77 77 0 0 1 1340 389V797" fill="none" stroke="#05031A" stroke-opacity="0.55" stroke-width="30" filter="url(#bl9)"/>
+              </g>
+
+              <!-- the portal itself: thick lit reveal, narrow edge highlights -->
+              <g id="doorFace">
+                <path fill-rule="evenodd" fill="url(#face)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
+                <path fill-rule="evenodd" fill="url(#faceV)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
+                <path d="M1132 797V402A104 104 0 0 1 1340 402V797" fill="none" stroke="url(#rimOuter)" stroke-width="1.4"/>
+                <path d="M1186 797V389A77 77 0 0 1 1340 389" fill="none" stroke="url(#innerHL)" stroke-width="1.3"/>
+              </g>
+
+              <!-- faint, blurred reflection of the lit portal on the polished floor -->
+              <g mask="url(#refMask)" opacity="0.38">
+                <g filter="url(#bl3)"><use href="#doorFace" transform="translate(0 1594) scale(1 -1)"/></g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- ===== LAMP: warm interior light, kept inside the opening ===== -->
+          <div class="lyr lyr-lamp">
+            <svg class="flicker" viewBox="380 100 1175 912" focusable="false">
+              <defs>
+                <clipPath id="opening2"><path d="M1186 797V389A77 77 0 0 1 1340 389V797Z"/></clipPath>
+                <radialGradient id="lampCore" cx="1235" cy="655" r="80" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#FFC987" stop-opacity="0.85"/>
+                  <stop offset="0.25" stop-color="#F2A860" stop-opacity="0.45"/>
+                  <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="lampWide" cx="1235" cy="655" r="160" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#F2A860" stop-opacity="0.2"/>
+                  <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="lampBed" cx="1240" cy="690" r="90" gradientTransform="translate(1240 690) scale(1 0.36) translate(-1240 -690)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#FFC987" stop-opacity="0.3"/>
+                  <stop offset="1" stop-color="#FFC987" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="lampFloor" cx="1244" cy="758" r="90" gradientTransform="translate(1244 758) scale(1 0.26) translate(-1244 -758)" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#F2A860" stop-opacity="0.26"/>
+                  <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <g clip-path="url(#opening2)">
+                <circle cx="1235" cy="655" r="160" fill="url(#lampWide)"/>
+                <circle cx="1235" cy="655" r="80" fill="url(#lampCore)"/>
+                <rect x="1150" y="640" width="200" height="110" fill="url(#lampBed)"/>
+                <rect x="1150" y="730" width="200" height="70" fill="url(#lampFloor)"/>
+              </g>
+            </svg>
+          </div>
+
+        </div>
       </div>
 
       <section class="clock" id="countdown" aria-label="Countdown to launch">

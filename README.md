@@ -47,7 +47,7 @@ Add `?now=<ISO timestamp with offset>` to override the page's clock (affects onl
 
 - **Logo:** stacked white lockup on Midnight Indigo. The marketing-only "nook." period variants were not used (guidelines §6).
 - **Typeface:** the guidelines say none is selected, so the page uses the system sans-serif stack (no webfont requests). Revisit when a typeface is chosen.
-- **Layout:** follows the approved reference screenshot. On desktop (900px and wider) the whole composition is scaled as one 1555×1012 canvas; below that it stacks (logo, headline, doorway, countdown, footer).
+- **Layout:** three genuine layouts, not one scaled design. Stacked (phones, portrait tablets: fluid flex column, `clamp()` type, doorway sized from viewport height via container units); Split (900px+ landscape: CSS grid, text and countdown beside the doorway); Canvas (1025px+, aspect 5:4 or wider: the approved 1555×1012 reference, scaled as one piece). Only the canvas layout uses a fixed design size.
 - **Doorway:** an original inline SVG scene (arch, lit reveal, bunk-bed room, lamp, floor light). It is decorative and `aria-hidden`; the reference screenshot is not used as an image. It is not an official brand asset.
 - **Colour:** the five brand colours, plus a headline tint blended from Nook Violet and Soft Lavender, and a warm lamp colour inside the room scene.
 - **Footer:** two small inline icons (calendar, link) as in the reference.

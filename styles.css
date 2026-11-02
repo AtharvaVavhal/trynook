@@ -13,8 +13,6 @@
 
   /* Desktop: the composition is designed on a 1555 x 1012 canvas; --u is one canvas pixel. */
   --u: min(100vw / 1555, 100svh / 1012);
-  /* Mobile: the doorway crop is 560 canvas-px wide; --s is one canvas pixel there. */
-  --s: min(100vw / 560, 0.8px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -114,49 +112,90 @@ h1 .l2 { color: var(--violet); background: linear-gradient(90deg, var(--violet),
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 /* =========================================================
-   MOBILE / TABLET (default): stacked
+   LAYOUT STRATEGY — three genuinely different layouts, chosen by what fits:
+
+   1. STACKED   (default: phones and portrait tablets)  fluid flex column, clamp() type, doorway sized from viewport height
+   2. SPLIT     (>= 900px wide, landscape)              CSS grid: text + countdown | doorway, footer underneath
+   3. CANVAS    (>= 1025px wide, aspect >= 5:4)         the approved 1555 x 1012 desktop composition, scaled as one piece
+
+   Only layout 3 uses a fixed canvas. Layouts 1 and 2 are fluid and contain no fixed widths or heights.
    ========================================================= */
-.stage { padding: calc(28px + env(safe-area-inset-top)) 24px calc(28px + env(safe-area-inset-bottom)); }
-.comp { display: flex; flex-direction: column; align-items: center; max-width: 560px; margin: 0 auto; }
+
+/* ---------- 1. STACKED ---------- */
+.stage {
+  display: flex; align-items: center; justify-content: center;
+  padding: calc(clamp(16px, 3svh, 36px) + env(safe-area-inset-top)) clamp(20px, 6vw, 56px) calc(clamp(14px, 2.4svh, 32px) + env(safe-area-inset-bottom));
+}
+.comp { width: 100%; max-width: 680px; display: flex; flex-direction: column; align-items: center; }
 .arc-left { display: none; }
 
-.brand img { display: block; width: 96px; height: auto; }
-.hero { margin-top: 36px; width: 100%; }
-.eyebrow { font-size: 11px; }
-h1 { margin-top: 22px; font-size: clamp(2rem, 9.4vw, 4rem); }
-.sub { margin-top: 16px; font-size: clamp(1rem, 4.4vw, 1.35rem); }
+.brand img { display: block; width: clamp(64px, 17vw, 112px); height: auto; }
+.hero { width: 100%; margin-top: clamp(14px, 2.6svh, 32px); }
+.eyebrow { font-size: clamp(10.5px, 2.9vw, 13px); }
+h1 { margin-top: clamp(10px, 1.8svh, 22px); font-size: clamp(1.9rem, 9.6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; }
+.sub { margin-top: clamp(8px, 1.4svh, 16px); font-size: clamp(1rem, 4.4vw, 1.5rem); }
 
-/* the doorway, cropped around the door; full-bleed */
+/* The doorway is a normal block. Its height follows the viewport height; the artwork inside is centred on the
+   door and sized from that height (cqh = 1% of the .scene box), so the whole arch, interior and floor
+   pool are always in frame whatever the box width. */
 .scene {
-  position: relative; order: 3;
-  width: calc(560 * var(--s)); height: calc(600 * var(--s));
-  flex: none; margin-top: 8px; margin-bottom: 0;
-  overflow: hidden; pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 52%, #000 58%, transparent 100%);
-          mask-image: radial-gradient(ellipse 50% 50% at 50% 52%, #000 58%, transparent 100%);
+  --h: clamp(230px, 40svh, 470px);
+  position: relative; flex: none; width: 100%; height: var(--h); margin-top: clamp(0px, 0.5svh, 8px);
+  container-type: size; overflow: hidden; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 62%, transparent 100%);
 }
-.scene svg { position: absolute; width: calc(1175 * var(--s)); height: calc(912 * var(--s)); left: calc(-580 * var(--s)); top: calc(-130 * var(--s)); overflow: visible; }
-.hero { order: 2; } .brand { order: 1; } .clock { order: 4; } .foot { order: 5; }
+.art {
+  --k: calc(100cqh / 610);               /* one canvas unit; the crop is 610 units tall (y 255..865): arch top, room, floor pool */
+  position: absolute; width: calc(1175 * var(--k)); height: calc(912 * var(--k));
+  left: calc(50cqw - 856 * var(--k));    /* door centre (x 1236) lands on the box centre */
+  top: calc(-155 * var(--k));
+}
+.lyr { position: absolute; inset: 0; pointer-events: none; }
+.lyr svg { display: block; width: 100%; height: 100%; overflow: visible; }
 
-.clock { width: 100%; max-width: 520px; margin-top: 8px; }
-.panel { border-radius: 20px; height: 112px; }
-.num { font-size: clamp(2.1rem, 10.5vw, 3.4rem); }
-.lbl { font-size: 9.5px; margin-top: 10px; letter-spacing: 0.14em; text-indent: 0.14em; }
-.launched-title { font-size: 1.6rem; } .launched-sub { font-size: 0.95rem; }
+.clock { width: 100%; max-width: 560px; margin-top: clamp(8px, 1.4svh, 16px); }
+.panel { border-radius: clamp(16px, 5vw, 26px); }
+.timer { padding: clamp(12px, 2.2svh, 22px) 0 clamp(10px, 2svh, 20px); height: auto; }
+.unit { justify-content: flex-start; }
+.num { font-size: clamp(1.9rem, 9.4vw, 3.6rem); }
+.lbl { font-size: clamp(8.5px, 2.4vw, 11.5px); margin-top: clamp(6px, 1.2svh, 12px); letter-spacing: 0.14em; text-indent: 0.14em; }
+.launched { padding: clamp(16px, 3svh, 28px) 12px; }
+.launched-title { font-size: clamp(1.4rem, 6vw, 2.4rem); } .launched-sub { font-size: clamp(0.9rem, 3.4vw, 1.1rem); }
 
-.foot { order: 5; width: 100%; max-width: 520px; margin-top: 28px; font-size: 13px; }
-.foot svg { width: 17px; height: 17px; margin-right: 10px; }
-.rule { margin: 0 16px; }
+.foot { width: 100%; max-width: 560px; margin-top: clamp(12px, 2.2svh, 26px); font-size: clamp(12px, 3.3vw, 15px); }
+.foot svg { width: 1.3em; height: 1.3em; margin-right: 0.6em; }
+.rule { margin: 0 clamp(10px, 3vw, 24px); min-width: 12px; }
 
-@media (min-width: 480px) { .eyebrow { font-size: 12px; } .lbl { font-size: 11px; letter-spacing: 0.2em; text-indent: 0.2em; } .panel { height: 128px; } .foot { font-size: 14px; } }
+@media (max-width: 340px) { .rule { display: none; } .foot { justify-content: space-between; } }
 
-/* =========================================================
-   DESKTOP: the reference composition, scaled as one piece
-   ========================================================= */
-@media (min-width: 900px) {
+/* ---------- 2. SPLIT (landscape tablets / small laptops) ---------- */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  .stage { padding: clamp(20px, 4svh, 48px) clamp(28px, 5vw, 72px); }
+  .comp {
+    max-width: 1180px; min-height: calc(100svh - clamp(40px, 8svh, 96px));
+    display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-rows: auto auto auto auto; align-content: center; align-items: center; justify-items: center;
+    grid-template-areas: "brand scene" "hero scene" "clock scene" "foot foot";
+    column-gap: clamp(16px, 3vw, 48px);
+  }
+  .brand { grid-area: brand; } .hero { grid-area: hero; margin-top: clamp(12px, 2.4svh, 28px); }
+  .clock { grid-area: clock; margin-top: clamp(14px, 3svh, 32px); }
+  .scene { grid-area: scene; align-self: center; width: 100%; height: clamp(400px, 70svh, 760px); margin: 0; }
+  .foot { grid-area: foot; max-width: none; margin-top: clamp(14px, 3svh, 36px); }
+  .brand img { width: clamp(88px, 10vw, 124px); }
+  h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+  .sub { font-size: clamp(1.1rem, 2.1vw, 1.6rem); }
+  .num { font-size: clamp(2.2rem, 4.2vw, 3.8rem); }
+  .lbl { font-size: clamp(9.5px, 1.1vw, 12px); letter-spacing: 0.2em; text-indent: 0.2em; }
+  .eyebrow { font-size: clamp(11px, 1.3vw, 14px); }
+}
+
+/* ---------- 3. CANVAS: the approved desktop reference ---------- */
+@media (min-width: 1025px) and (min-aspect-ratio: 5/4) {
   .stage { display: grid; place-items: center; padding: 0; overflow: hidden; }
-  .comp { display: block; width: calc(var(--u) * 1555); height: calc(var(--u) * 1012); max-width: none; margin: 0; }
-  .comp > * { position: absolute; order: 0; }
+  .comp { display: block; width: calc(var(--u) * 1555); height: calc(var(--u) * 1012); max-width: none; min-height: 0; margin: 0; }
+  .comp > * { position: absolute; grid-area: auto; }
 
   .arc-left {
     display: block; left: calc(var(--u) * 97); top: calc(var(--u) * -13); width: calc(var(--u) * 986); height: calc(var(--u) * 1100);
@@ -175,34 +214,58 @@ h1 { margin-top: 22px; font-size: clamp(2rem, 9.4vw, 4rem); }
 
   .scene {
     left: calc(var(--u) * 380); top: calc(var(--u) * 100); width: calc(var(--u) * 1175); height: calc(var(--u) * 912);
-    margin: 0; overflow: visible; z-index: 1;
+    min-height: 0; margin: 0; overflow: visible; z-index: 1;
     -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 88%, transparent 100%);
             mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 88%, transparent 100%);
   }
-  .scene svg { left: 0; top: 0; width: 100%; height: 100%; }
+  .art { left: 0; top: 0; width: 100%; height: 100%; }
 
   .clock { left: calc(var(--u) * 193); top: calc(var(--u) * 636); width: calc(var(--u) * 799); max-width: none; margin: 0; z-index: 2; }
   .panel { height: calc(var(--u) * 148); border-radius: calc(var(--u) * 26); }
-  .timer { padding-left: calc(var(--u) * 10); }
+  .timer { height: 100%; padding: 0 0 0 calc(var(--u) * 10); }
+  .unit { justify-content: center; }
   .num { font-size: calc(var(--u) * 68); }
-  .lbl { font-size: calc(var(--u) * 14); margin-top: calc(var(--u) * 14); }
+  .lbl { font-size: calc(var(--u) * 14); margin-top: calc(var(--u) * 14); letter-spacing: 0.22em; text-indent: 0.22em; }
+  .launched { padding: 0 16px; }
   .launched-title { font-size: calc(var(--u) * 52); } .launched-sub { font-size: calc(var(--u) * 22); }
 
   .foot { left: calc(var(--u) * 133); width: calc(var(--u) * 1297); top: calc(var(--u) * 923); transform: translateY(-50%); max-width: none; margin: 0; font-size: calc(var(--u) * 22.5); z-index: 2; }
   .foot svg { width: calc(var(--u) * 22); height: calc(var(--u) * 22); margin-right: calc(var(--u) * 28); }
   .rule { margin: 0 calc(var(--u) * 44); }
-  .brand, .hero, .clock, .foot { }
-}
-@media (min-width: 900px) {
-  /* .foot uses translateY for centring, so its entrance must not override transform */
+
+  /* .foot is centred with translateY, so its entrance must not animate transform */
   .foot { animation-name: rise-foot; }
   @keyframes rise-foot { from { opacity: 0; } to { opacity: 1; } }
+}
+/* ---------- Doorway light ----------
+   Only opacity and transform animate, each on its own layer, so the browser composites them on
+   the GPU and never re-rasterises the blurred artwork. Nothing here affects layout. */
+.lyr { animation: lyr-in 2.4s var(--ease) both; }
+.lyr-base  { animation-delay: 0.15s; }
+.lyr-halo  { animation-delay: 1.0s; animation-duration: 2.8s; }
+.lyr-floor { animation-delay: 1.4s; animation-duration: 2.8s; }
+.lyr-lamp  { animation-delay: 1.8s; animation-duration: 2.2s; }
+
+/* violet light breathes: 6s cycle, 16% swing */
+.breathe { animation: breathe 6s ease-in-out 3.4s infinite alternate both; will-change: opacity; }
+@keyframes breathe { from { opacity: 0.86; } to { opacity: 1; } }
+
+/* floor light drifts a few pixels and softens: 8s cycle */
+.drift { animation: drift 8s ease-in-out 3.8s infinite alternate both; will-change: transform, opacity; }
+@keyframes drift { from { transform: translateX(-0.5%); opacity: 0.9; } to { transform: translateX(0.5%); opacity: 1; } }
+
+/* lamp: slow ambient wobble, never below 93% */
+.flicker { animation: flicker 9s linear 4s infinite both; will-change: opacity; }
+@keyframes flicker {
+  0%, 100% { opacity: 1; }   14% { opacity: 0.97; }  19% { opacity: 0.94; }  25% { opacity: 1; }
+  48% { opacity: 0.98; }     53% { opacity: 0.95; }  58% { opacity: 1; }     80% { opacity: 0.97; }
+  86% { opacity: 0.99; }
 }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .brand, .hero, .scene, .clock, .foot { animation: none; opacity: 1; transform: none; }
-  .foot { transform: none; }
   .num.tick { animation: none; }
+  .lyr, .breathe, .drift, .flicker { animation: none; opacity: 1; transform: none; will-change: auto; }
 }
-@media (prefers-reduced-motion: reduce) and (min-width: 900px) { .foot { transform: translateY(-50%); } }
+@media (prefers-reduced-motion: reduce) and (min-width: 1025px) and (min-aspect-ratio: 5/4) { .foot { transform: translateY(-50%); } }
