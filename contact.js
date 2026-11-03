@@ -20,6 +20,7 @@
     lastFocus = document.activeElement;
     status.textContent = '';
     status.className = 'form-msg';
+    form.classList.remove('sent');
     dlg.showModal();
     document.getElementById('cf-name').focus();
   }
@@ -31,6 +32,13 @@
   document.getElementById('contact-close').addEventListener('click', close);
   dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); }); // backdrop click
 
+  document.getElementById('cf-done-close').addEventListener('click', close);
+  function showDone(title, text) {
+    document.getElementById('cf-done-title').textContent = title;
+    document.getElementById('cf-done-text').textContent = text;
+    form.classList.add('sent');
+    document.getElementById('cf-done').focus();
+  }
   function fail(msg) { status.textContent = msg; status.className = 'form-msg err'; }
 
   form.addEventListener('submit', function (e) {
@@ -45,6 +53,8 @@
       var body = message + '\n\n— ' + name + ' (' + email + (f.phone.value ? ', ' + f.phone.value : '') + ')';
       window.location.href = 'mailto:' + FALLBACK_EMAIL + '?subject=' + encodeURIComponent('Hello nook, from ' + name) +
         '&body=' + encodeURIComponent(body);
+      form.reset();
+      showDone('Almost there', 'Your email app should now be open with your message ready. Press send there to finish.');
       return;
     }
 
@@ -58,8 +68,7 @@
     }).then(function (r) {
       if (!r.ok) throw new Error('bad status');
       form.reset();
-      status.className = 'form-msg ok';
-      status.textContent = 'Thanks! We’ve got your message and will reply soon.';
+      showDone('Message sent', 'Thanks! We’ve got your message and will reply soon.');
     }).catch(function () {
       fail('Something went wrong. Please try again, or email ' + FALLBACK_EMAIL + '.');
     }).then(function () { submit.disabled = false; });

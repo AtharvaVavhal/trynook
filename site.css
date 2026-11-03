@@ -82,3 +82,17 @@ main > section.cta { max-width: calc(1120px - 8vw); padding: 64px 24px; }
 .form-msg { min-height: 1.4em; margin: 8px 0 0; font-size: 14px; color: var(--muted); }
 .form-msg.ok { color: #9fe8b8; }
 .form-msg.err { color: #ffb3b3; }
+
+/* success state */
+.done { display: none; text-align: center; padding: 24px 0 8px; }
+.done-icon { display: grid; place-items: center; width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; background: var(--violet); color: var(--white); font-size: 28px; }
+.done p:not(.done-icon) { color: var(--muted); margin: 0; }
+.modal form.sent > :not(.done):not(.close) { display: none; }
+.modal form.sent .done { display: block; }
+
+/* team */
+.people { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.people li { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.people p { margin: 0 0 14px; color: var(--muted); }
+.people a { color: #B9A6FF; font-weight: 600; text-decoration: none; }
+.people a:hover { text-decoration: underline; }

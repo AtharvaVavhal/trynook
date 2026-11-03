@@ -79,12 +79,28 @@
       <p>Say hello and we’ll get back to you.</p>
       <a class="btn" href="mailto:hello@trynook.in">Get in touch</a>
     </section>
+
+    <section class="section team" id="team" aria-labelledby="team-h">
+      <h2 id="team-h">Built by</h2>
+      <ul class="people">
+        <li>
+          <h3>Atharva Vavhal</h3>
+          <p>Computer Engineering (Software Engineering)<br>Vishwakarma Institute of Technology</p>
+          <a href="https://www.linkedin.com/in/atharva-vavhal/" target="_blank" rel="noopener noreferrer" aria-label="Atharva Vavhal on LinkedIn (opens in a new tab)">LinkedIn ↗</a>
+        </li>
+        <li>
+          <h3>Sharwari Patil</h3>
+          <p>Computer Engineering<br>Vishwakarma Institute of Technology</p>
+          <a href="https://www.linkedin.com/in/sharwari-patil-vit/" target="_blank" rel="noopener noreferrer" aria-label="Sharwari Patil on LinkedIn (opens in a new tab)">LinkedIn ↗</a>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <footer class="foot">
     <img src="assets/nook-logo-white.svg" alt="nook" height="22">
     <p>trynook.in</p>
-    <p class="small">© 2026 nook</p>
+    <p class="small">© 2026 nook · Developed by Atharva Vavhal</p>
   </footer>
 
   <dialog class="modal" id="contact" aria-labelledby="contact-h">
@@ -110,6 +126,13 @@
 
       <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
       <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
     </form>
   </dialog>
 
