@@ -64,3 +64,21 @@ main > section.cta { max-width: calc(1120px - 8vw); padding: 64px 24px; }
   .nav nav a:not(.btn) { display: none; }
   main > section { padding-top: 64px; padding-bottom: 64px; }
 }
+
+/* contact dialog */
+.modal { border: 1px solid var(--line); border-radius: 24px; background: #1d1844; color: var(--lav); padding: 0; width: min(520px, calc(100% - 32px)); }
+.modal::backdrop { background: rgba(8,6,28,.7); backdrop-filter: blur(4px); }
+.modal form { padding: 32px 28px 28px; position: relative; display: grid; gap: 6px; }
+.modal .section-sub { margin-bottom: 14px; }
+.modal label { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.opt { opacity: .7; }
+.modal input, .modal textarea { width: 100%; font: inherit; color: var(--white); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.modal input:focus, .modal textarea:focus { outline: 2px solid var(--violet); border-color: transparent; }
+.modal textarea { resize: vertical; }
+.modal .btn { margin-top: 14px; cursor: pointer; font: inherit; font-weight: 600; }
+.modal .btn:disabled { opacity: .6; cursor: default; }
+.close { position: absolute; top: 12px; right: 14px; background: none; border: 0; color: var(--muted); font-size: 28px; line-height: 1; cursor: pointer; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-msg { min-height: 1.4em; margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+.form-msg.ok { color: #9fe8b8; }
+.form-msg.err { color: #ffb3b3; }
