@@ -4,103 +4,362 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>nook — Hostel living. Reimagined.</title>
-  <meta name="description" content="nook is here. Hostel living, reimagined.">
-  <meta name="theme-color" content="#171338">
-  <meta name="color-scheme" content="dark">
+  <meta name="description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="nook">
   <meta property="og:title" content="nook — Hostel living. Reimagined.">
-  <meta property="og:description" content="nook is here. Hostel living, reimagined.">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="nav">
-    <a class="nav-logo" href="#top" aria-label="nook home">
-      <img src="assets/nook-logo-white.svg" alt="nook" height="28">
-    </a>
-    <nav aria-label="Primary">
-      <a href="#why">Why nook</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
+    <div class="nav-in">
+      <a class="nav-logo" href="#top" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary">
+        <a href="#why">What it does</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="#team">Team</a>
+      </nav>
       <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
-    </nav>
+    </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <p class="eyebrow">We’re live</p>
-      <h1>Hostel living.<br><span class="accent">Reimagined.</span></h1>
-      <p class="lede">nook is here: a calmer, warmer place to come home to.</p>
-      <div class="actions">
+    <section class="hero" id="top" aria-labelledby="hero-h">
+      <p class="kicker rise" style="--d:.05s">Hostel &amp; PG management</p>
+      <h1 id="hero-h" class="rise" style="--d:.15s">Hostel living.<br>Reimagined.</h1>
+      <p class="lede rise" style="--d:.3s">One dependable record of your property, your residents and your money, laid out on the real floor plan.</p>
+      <div class="actions rise" style="--d:.45s">
         <a class="btn" href="mailto:hello@trynook.in">Get in touch</a>
-        <a class="btn btn-ghost" href="#why">Why nook</a>
+        <a class="textlink" href="#why">What nook does <span aria-hidden="true">›</span></a>
+      </div>
+      <div class="stage rise" style="--d:.6s">
+        <div class="scene" aria-hidden="true">
+          <div class="art">
+
+            <!-- ===== HALO: the arch lighting the wall ===== -->
+            <div class="lyr lyr-halo">
+              <svg class="breathe" viewBox="380 100 1175 912" focusable="false">
+                <defs>
+                  <radialGradient id="wallWash" cx="1236" cy="520" r="430" gradientTransform="translate(1236 520) scale(1 1.15) translate(-1236 -520)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#7657F6" stop-opacity="0.30"/>
+                    <stop offset="0.35" stop-color="#7657F6" stop-opacity="0.15"/>
+                    <stop offset="0.7" stop-color="#7657F6" stop-opacity="0.05"/>
+                    <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                  </radialGradient>
+                  <filter id="hb1" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="44"/></filter>
+                  <filter id="hb2" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="20"/></filter>
+                  <filter id="hb3" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="8"/></filter>
+                </defs>
+                <rect x="380" y="100" width="1175" height="797" fill="url(#wallWash)"/>
+                <g fill="none" stroke="#7657F6" stroke-linejoin="round">
+                  <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="120" stroke-opacity="0.15" filter="url(#hb1)"/>
+                  <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="48" stroke-opacity="0.26" filter="url(#hb2)"/>
+                  <path d="M1132 797V402A104 104 0 0 1 1340 402V797" stroke-width="14" stroke-opacity="0.34" filter="url(#hb3)"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- ===== FLOOR: perspective light pool ===== -->
+            <div class="lyr lyr-floor">
+              <svg class="drift" viewBox="380 100 1175 912" focusable="false">
+                <defs>
+                  <clipPath id="floorClip"><rect x="380" y="797" width="1175" height="215"/></clipPath>
+                  <radialGradient id="fl1" cx="1250" cy="800" r="560" gradientTransform="translate(1250 800) scale(1 0.3) translate(-1250 -800)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#A58BFF" stop-opacity="0.62"/>
+                    <stop offset="0.22" stop-color="#8366F8" stop-opacity="0.38"/>
+                    <stop offset="0.6" stop-color="#7657F6" stop-opacity="0.12"/>
+                    <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="fl2" cx="1262" cy="805" r="240" gradientTransform="translate(1262 805) scale(1 0.2) translate(-1262 -805)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#E4DAFF" stop-opacity="0.8"/>
+                    <stop offset="0.5" stop-color="#B9A6FF" stop-opacity="0.32"/>
+                    <stop offset="1" stop-color="#B9A6FF" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="fl3" cx="1090" cy="858" r="430" gradientTransform="translate(1090 858) scale(1 0.2) translate(-1090 -858)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#8E73FA" stop-opacity="0.2"/>
+                    <stop offset="1" stop-color="#8E73FA" stop-opacity="0"/>
+                  </radialGradient>
+                  <filter id="fb40" filterUnits="userSpaceOnUse" x="380" y="797" width="1175" height="215"><feGaussianBlur stdDeviation="36"/></filter>
+                  <filter id="fb2" filterUnits="userSpaceOnUse" x="1100" y="797" width="320" height="40"><feGaussianBlur stdDeviation="2"/></filter>
+                </defs>
+                <g clip-path="url(#floorClip)">
+                  <ellipse cx="1040" cy="975" rx="720" ry="100" fill="#06031A" fill-opacity="0.22" filter="url(#fb40)"/>
+                  <rect x="380" y="797" width="1175" height="215" fill="url(#fl1)"/>
+                  <rect x="380" y="797" width="1175" height="215" fill="url(#fl3)"/>
+                  <rect x="380" y="797" width="1175" height="215" fill="url(#fl2)"/>
+                  <ellipse cx="1238" cy="814" rx="96" ry="2.4" fill="#E6DEFF" fill-opacity="0.34" filter="url(#fb2)"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- ===== BASE: structure, materials, shadows ===== -->
+            <div class="lyr lyr-base">
+              <svg viewBox="380 100 1175 912" focusable="false">
+                <defs>
+                  <linearGradient id="face" x1="1132" y1="0" x2="1186" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#AE9AFD"/>
+                    <stop offset="0.3" stop-color="#8A6DF9"/>
+                    <stop offset="0.75" stop-color="#6A4DEA"/>
+                    <stop offset="1" stop-color="#523AC4"/>
+                  </linearGradient>
+                  <linearGradient id="faceV" x1="0" y1="298" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.2"/>
+                    <stop offset="0.45" stop-color="#FFFFFF" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#171338" stop-opacity="0.32"/>
+                  </linearGradient>
+                  <linearGradient id="rimOuter" x1="0" y1="298" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#EFE9FF" stop-opacity="0.8"/>
+                    <stop offset="1" stop-color="#C9B9FF" stop-opacity="0.35"/>
+                  </linearGradient>
+                  <linearGradient id="innerHL" x1="0" y1="312" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#F4F1FF" stop-opacity="0.95"/>
+                    <stop offset="0.45" stop-color="#CDBEFF" stop-opacity="0.5"/>
+                    <stop offset="1" stop-color="#CDBEFF" stop-opacity="0.08"/>
+                  </linearGradient>
+                  <linearGradient id="room" x1="0" y1="312" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#0E0A26"/>
+                    <stop offset="0.7" stop-color="#1B1344"/>
+                    <stop offset="1" stop-color="#281D5E"/>
+                  </linearGradient>
+                  <linearGradient id="recessTop" x1="0" y1="312" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#05031A" stop-opacity="0.7"/>
+                    <stop offset="1" stop-color="#05031A" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="recessRight" x1="1300" y1="0" x2="1346" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#05031A" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#05031A" stop-opacity="0.22"/>
+                  </linearGradient>
+                  <linearGradient id="floorIn" x1="0" y1="715" x2="0" y2="797" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#271D62"/>
+                    <stop offset="1" stop-color="#5A44C4"/>
+                  </linearGradient>
+                  <linearGradient id="rimL" x1="1186" y1="0" x2="1340" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#7657F6" stop-opacity="0.5"/>
+                    <stop offset="0.45" stop-color="#7657F6" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="windowSky" x1="0" y1="505" x2="0" y2="613" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#2E2670"/>
+                    <stop offset="1" stop-color="#4A3C98"/>
+                  </linearGradient>
+                  <radialGradient id="aura" cx="1250" cy="560" r="430" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#7657F6" stop-opacity="0.16"/>
+                    <stop offset="0.6" stop-color="#7657F6" stop-opacity="0.05"/>
+                    <stop offset="1" stop-color="#7657F6" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="refFade" x1="0" y1="797" x2="0" y2="937" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+                    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                  </linearGradient>
+                  <mask id="refMask" maskUnits="userSpaceOnUse" x="1080" y="797" width="320" height="150"><rect x="1080" y="797" width="320" height="150" fill="url(#refFade)"/></mask>
+                  <filter id="bl3" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="3"/></filter>
+                  <filter id="bl6" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="6"/></filter>
+                  <filter id="bl9" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="9"/></filter>
+                  <filter id="bl14" filterUnits="userSpaceOnUse" x="380" y="100" width="1175" height="912"><feGaussianBlur stdDeviation="14"/></filter>
+                  <clipPath id="opening"><path d="M1186 797V389A77 77 0 0 1 1340 389V797Z"/></clipPath>
+                </defs>
+
+                <!-- ambient colour in the wall around the portal -->
+                <rect x="380" y="100" width="1175" height="697" fill="url(#aura)"/>
+
+                <!-- architectural frames on the wall -->
+                <path class="outline" d="M988 810V347A243.5 243.5 0 0 1 1475 347V810"/>
+                <path class="outline" d="M1345 596Q1450 522 1555 502"/>
+                <path d="M1340 797H1555" stroke="#F4F1FF" stroke-opacity="0.12" stroke-width="1"/>
+
+                <!-- cast shadow of the portal on the wall (soft, offset away from the light) -->
+                <path d="M1146 797V404A96 96 0 0 1 1340 404V797Z" transform="translate(22 10)" fill="#06031A" fill-opacity="0.4" filter="url(#bl14)"/>
+
+                <!-- contact shadows where the portal meets the floor -->
+                <ellipse cx="1240" cy="800" rx="170" ry="11" fill="#05021A" fill-opacity="0.3" filter="url(#bl9)"/>
+                <ellipse cx="1236" cy="798.5" rx="116" ry="4.5" fill="#05021A" fill-opacity="0.55" filter="url(#bl3)"/>
+
+                <!-- room interior -->
+                <g clip-path="url(#opening)">
+                  <rect x="1186" y="300" width="160" height="500" fill="url(#room)"/>
+                  <!-- wardrobe -->
+                  <rect x="1190" y="445" width="78" height="103" fill="#221A52"/>
+                  <path d="M1229 445V548M1190 497H1268" stroke="#171338" stroke-width="1.5" stroke-opacity="0.8"/>
+                  <rect x="1190" y="441" width="78" height="5" fill="#2F256A"/>
+                  <!-- bunk bed -->
+                  <ellipse cx="1246" cy="545" rx="48" ry="9" fill="#05031A" fill-opacity="0.35" filter="url(#bl6)"/>
+                  <rect x="1195" y="560" width="4" height="158" fill="#1B1344"/>
+                  <rect x="1262" y="560" width="4" height="158" fill="#1B1344"/>
+                  <rect x="1195" y="584" width="71" height="5" fill="#2A2062"/>
+                  <rect x="1198" y="571" width="64" height="13" rx="3" fill="#B6A9E8" fill-opacity="0.55"/>
+                  <ellipse cx="1214" cy="570" rx="12" ry="4.5" fill="#D9D0FA" fill-opacity="0.5"/>
+                  <path d="M1268 566V716" stroke="#3A2E78" stroke-width="1.5"/>
+                  <path d="M1268 590H1276M1268 614H1276M1268 638H1276M1268 662H1276M1268 686H1276" stroke="#3A2E78" stroke-width="1.5"/>
+                  <rect x="1195" y="694" width="108" height="6" fill="#2A2062"/>
+                  <rect x="1198" y="681" width="100" height="13" rx="3" fill="#9487D6" fill-opacity="0.26"/>
+                  <rect x="1195" y="700" width="4" height="22" fill="#1B1344"/>
+                  <!-- window -->
+                  <rect x="1296" y="503" width="46" height="110" fill="#14102F"/>
+                  <rect x="1300" y="507" width="38" height="102" fill="url(#windowSky)"/>
+                  <path d="M1319 507V609M1300 541H1338M1300 575H1338" stroke="#14102F" stroke-width="2.5"/>
+                  <!-- plant -->
+                  <rect x="1312" y="640" width="16" height="16" rx="2" fill="#1B1344"/>
+                  <path d="M1320 640C1304 628 1304 610 1316 596C1318 616 1326 624 1320 640ZM1322 640C1336 626 1338 608 1330 596C1324 614 1318 624 1322 640Z" fill="#2B3C52" fill-opacity="0.85"/>
+                  <!-- bedside table + lamp -->
+                  <rect x="1222" y="670" width="28" height="32" fill="#1B1344"/>
+                  <path d="M1229 647H1243L1247 662H1225Z" fill="#FFCB8E"/>
+                  <rect x="1234" y="662" width="3" height="8" fill="#3A2E78"/>
+                  <!-- floor inside + contact shadows under furniture -->
+                  <path d="M1186 797V716H1346V797Z" fill="url(#floorIn)"/>
+                  <path d="M1186 716H1346" stroke="#171338" stroke-opacity="0.5"/>
+                  <ellipse cx="1246" cy="720" rx="64" ry="5" fill="#05031A" fill-opacity="0.5" filter="url(#bl3)"/>
+                  <ellipse cx="1236" cy="703" rx="20" ry="3" fill="#05031A" fill-opacity="0.5" filter="url(#bl3)"/>
+                  <ellipse cx="1262" cy="796" rx="95" ry="16" fill="#C9B9FF" fill-opacity="0.34"/>
+                  <!-- light entering from the lit reveal -->
+                  <rect x="1186" y="300" width="160" height="500" fill="url(#rimL)"/>
+                  <!-- depth: dark recess at the head and far jamb, ambient occlusion along the frame -->
+                  <rect x="1186" y="300" width="160" height="260" fill="url(#recessTop)"/>
+                  <rect x="1296" y="300" width="50" height="500" fill="url(#recessRight)"/>
+                  <path d="M1186 797V389A77 77 0 0 1 1340 389V797" fill="none" stroke="#05031A" stroke-opacity="0.55" stroke-width="30" filter="url(#bl9)"/>
+                </g>
+
+                <!-- the portal itself: thick lit reveal, narrow edge highlights -->
+                <g id="doorFace">
+                  <path fill-rule="evenodd" fill="url(#face)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
+                  <path fill-rule="evenodd" fill="url(#faceV)" d="M1132 797V402A104 104 0 0 1 1340 402V797ZM1186 797V389A77 77 0 0 1 1340 389V797Z"/>
+                  <path d="M1132 797V402A104 104 0 0 1 1340 402V797" fill="none" stroke="url(#rimOuter)" stroke-width="1.4"/>
+                  <path d="M1186 797V389A77 77 0 0 1 1340 389" fill="none" stroke="url(#innerHL)" stroke-width="1.3"/>
+                </g>
+
+                <!-- faint, blurred reflection of the lit portal on the polished floor -->
+                <g mask="url(#refMask)" opacity="0.38">
+                  <g filter="url(#bl3)"><use href="#doorFace" transform="translate(0 1594) scale(1 -1)"/></g>
+                </g>
+              </svg>
+            </div>
+
+            <!-- ===== LAMP: warm interior light, kept inside the opening ===== -->
+            <div class="lyr lyr-lamp">
+              <svg class="flicker" viewBox="380 100 1175 912" focusable="false">
+                <defs>
+                  <clipPath id="opening2"><path d="M1186 797V389A77 77 0 0 1 1340 389V797Z"/></clipPath>
+                  <radialGradient id="lampCore" cx="1235" cy="655" r="80" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFC987" stop-opacity="0.85"/>
+                    <stop offset="0.25" stop-color="#F2A860" stop-opacity="0.45"/>
+                    <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="lampWide" cx="1235" cy="655" r="160" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#F2A860" stop-opacity="0.2"/>
+                    <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="lampBed" cx="1240" cy="690" r="90" gradientTransform="translate(1240 690) scale(1 0.36) translate(-1240 -690)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#FFC987" stop-opacity="0.3"/>
+                    <stop offset="1" stop-color="#FFC987" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="lampFloor" cx="1244" cy="758" r="90" gradientTransform="translate(1244 758) scale(1 0.26) translate(-1244 -758)" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#F2A860" stop-opacity="0.26"/>
+                    <stop offset="1" stop-color="#F2A860" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <g clip-path="url(#opening2)">
+                  <circle cx="1235" cy="655" r="160" fill="url(#lampWide)"/>
+                  <circle cx="1235" cy="655" r="80" fill="url(#lampCore)"/>
+                  <rect x="1150" y="640" width="200" height="110" fill="url(#lampBed)"/>
+                  <rect x="1150" y="730" width="200" height="70" fill="url(#lampFloor)"/>
+                </g>
+              </svg>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="why" aria-labelledby="why-h">
-      <h2 id="why-h">Why nook</h2>
-      <p class="section-sub">Placeholder copy: replace with your real details.</p>
-      <ul class="cards">
-        <li><h3>A space that’s yours</h3><p>Your own corner, thoughtfully designed, with room to rest and focus.</p></li>
-        <li><h3>Calm by design</h3><p>Warm light, quiet spaces and a feel that helps you unwind.</p></li>
-        <li><h3>Community, not crowds</h3><p>Meet the people you live alongside, on your terms.</p></li>
-        <li><h3>Simple and clear</h3><p>No surprises: clear terms and a straightforward way to get started.</p></li>
-        <li><h3>Looked after</h3><p>Responsive support whenever something needs attention.</p></li>
-        <li><h3>Made for you</h3><p>Built around how students and young professionals actually live.</p></li>
-      </ul>
-    </section>
-
-    <section class="section" id="how" aria-labelledby="how-h">
-      <h2 id="how-h">How it works</h2>
-      <ol class="steps">
-        <li><span class="n">1</span><h3>Reach out</h3><p>Tell us what you’re looking for.</p></li>
-        <li><span class="n">2</span><h3>Find your fit</h3><p>We help you pick the right space.</p></li>
-        <li><span class="n">3</span><h3>Move in</h3><p>Settle in and make it yours.</p></li>
-      </ol>
-    </section>
-
-    <section class="section" id="faq" aria-labelledby="faq-h">
-      <h2 id="faq-h">Questions</h2>
-      <div class="faq">
-        <details><summary>What is nook?</summary><p>nook is a new way of living in hostels. Replace this answer with your own description.</p></details>
-        <details><summary>Where is nook available?</summary><p>Add your locations here.</p></details>
-        <details><summary>How much does it cost?</summary><p>Add your pricing here.</p></details>
-        <details><summary>How do I get started?</summary><p>Email us at <a href="mailto:hello@trynook.in">hello@trynook.in</a> and we’ll take it from there.</p></details>
+    <section class="block" id="why" aria-labelledby="why-h">
+      <div class="wrap">
+        <h2 id="why-h" class="reveal">What nook does.</h2>
+        <p class="sub reveal">Built for independent hostels, PGs and co-living properties that run on paper and spreadsheets today.</p>
+        <ul class="bento">
+          <li class="reveal wide"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 21V10a6 6 0 0 1 12 0v11M3 21h18"/></svg></span><h3>Your property, as a floor plan</h3><p>Buildings, floors, rooms and individual beds, shown as an interactive map. Occupancy is something you look at, not something you piece together from a register.</p></li>
+          <li class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></span><h3>Pick a bed by where it is</h3><p>The corner, the window, the bunk near the stairs. Residents choose a place, not a label like “Bed 203C”.</p></li>
+          <li class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M16 5.2a3.2 3.2 0 0 1 0 5.6M18 14.3A6 6 0 0 1 21 20"/></svg></span><h3>Every rupee explained</h3><p>Each balance traces line by line from first charge to last payment. Posted records are never edited; corrections are reversals.</p></li>
+          <li class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.500-7-10V6z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg></span><h3>Residents and stays</h3><p>Admissions, bed allocation, room moves and checkout, with the full history of every stay kept.</p></li>
+          <li class="reveal"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.500"/><path d="M5.600 5.600l3.900 3.900M14.500 14.500l3.900 3.900M18.400 5.600l-3.900 3.900M9.500 14.500l-3.900 3.900"/></svg></span><h3>The right access for each role</h3><p>Owners, managers, cashiers and wardens see what they need and nothing more.</p></li>
+          <li class="reveal wide"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span><h3>Ready for many properties</h3><p>Each organisation’s data is kept separate from day one, so nook can serve many independent properties safely.</p></li>
+        </ul>
       </div>
     </section>
 
-    <section class="cta" aria-labelledby="cta-h">
-      <h2 id="cta-h">Ready to find your nook?</h2>
-      <p>Say hello and we’ll get back to you.</p>
-      <a class="btn" href="mailto:hello@trynook.in">Get in touch</a>
+    <section class="band" aria-label="Our promise">
+      <p class="reveal">The building is the interface.</p>
     </section>
 
-    <section class="section team" id="team" aria-labelledby="team-h">
-      <h2 id="team-h">Built by</h2>
-      <ul class="people">
-        <li>
-          <h3>Atharva Vavhal</h3>
-          <p>Computer Engineering (Software Engineering)<br>Vishwakarma Institute of Technology</p>
-          <a href="https://www.linkedin.com/in/atharva-vavhal/" target="_blank" rel="noopener noreferrer" aria-label="Atharva Vavhal on LinkedIn (opens in a new tab)">LinkedIn ↗</a>
-        </li>
-        <li>
-          <h3>Sharwari Patil</h3>
-          <p>Computer Engineering<br>Vishwakarma Institute of Technology</p>
-          <a href="https://www.linkedin.com/in/sharwari-patil-vit/" target="_blank" rel="noopener noreferrer" aria-label="Sharwari Patil on LinkedIn (opens in a new tab)">LinkedIn ↗</a>
-        </li>
-      </ul>
+    <section class="block" id="how" aria-labelledby="how-h">
+      <div class="wrap">
+        <h2 id="how-h" class="reveal">How it works.</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="n">01</span><h3>Map the property</h3><p>Set up buildings, floors, rooms and beds once. Everything else builds on that.</p></li>
+          <li class="reveal"><span class="n">02</span><h3>Admit and allocate</h3><p>Place residents in real beds. Availability is re-checked when you confirm, so two people never get the same bed.</p></li>
+          <li class="reveal"><span class="n">03</span><h3>Know who owes what</h3><p>Record cash, UPI and bank payments against the right charge and see every balance and why.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block alt" id="faq" aria-labelledby="faq-h">
+      <div class="wrap narrow">
+        <h2 id="faq-h" class="reveal">Questions.</h2>
+        <div class="faq reveal">
+          <details><summary>What is nook?</summary><p>A management platform for hostels, PGs and co-living properties. It keeps one record of your buildings and beds, the people staying in them, the rent they owe and the deposits you hold, with maintenance and reporting around it.</p></details>
+          <details><summary>Who is it for?</summary><p>Independent, owner-operated properties, typically 30 to 300 beds, that currently run on paper registers or spreadsheets.</p></details>
+          <details><summary>Does nook take payments?</summary><p>Not at first. Residents pay the property directly by cash, UPI or bank transfer. nook records and reconciles those payments; it never holds your money.</p></details>
+          <details><summary>Is nook available yet?</summary><p>nook is in development, starting with a pilot property in Pune. If you run a hostel or PG and want to shape what comes next, we’d like to hear from you at <a href="mailto:hello@trynook.in">hello@trynook.in</a>.</p></details>
+          <details><summary>Is resident information kept private?</summary><p>Yes. nook is designed so that no resident name, contact, document or balance is reachable through any public page.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="team" aria-labelledby="team-h">
+      <div class="wrap">
+        <h2 id="team-h" class="reveal">Built by.</h2>
+        <ul class="people">
+          <li class="reveal">
+            <h3>Atharva Vavhal</h3>
+            <p>Computer Engineering (Software Engineering)<br>Vishwakarma Institute of Technology</p>
+            <a class="textlink" href="https://www.linkedin.com/in/atharva-vavhal/" target="_blank" rel="noopener noreferrer" aria-label="Atharva Vavhal on LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">›</span></a>
+          </li>
+          <li class="reveal">
+            <h3>Sharwari Patil</h3>
+            <p>Computer Engineering<br>Vishwakarma Institute of Technology</p>
+            <a class="textlink" href="https://www.linkedin.com/in/sharwari-patil-vit/" target="_blank" rel="noopener noreferrer" aria-label="Sharwari Patil on LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">›</span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
     </section>
   </main>
 
   <footer class="foot">
-    <img src="assets/nook-logo-white.svg" alt="nook" height="22">
-    <p>trynook.in</p>
-    <p class="small">© 2026 nook · Developed by Atharva Vavhal</p>
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer">
+          <a href="#why">What it does</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#team">Team</a><a href="mailto:hello@trynook.in">Contact</a>
+        </nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
   </footer>
 
   <dialog class="modal" id="contact" aria-labelledby="contact-h">
@@ -137,5 +396,6 @@
   </dialog>
 
   <script src="contact.js"></script>
+  <script src="reveal.js"></script>
 </body>
 </html>
