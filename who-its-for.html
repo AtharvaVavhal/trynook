@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nook — Who it’s for</title>
+  <meta name="description" content="The roles, journeys and permissions nook is designed around.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="nook — Who it’s for">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary" id="primary-nav">
+        <a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html" aria-current="page">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">Who it’s for</p>
+      <h1 class="rise" style="--d:.15s">Built around real jobs.</h1>
+      <p class="lede rise" style="--d:.3s">nook is designed for the people who actually run a hostel or PG, and for the residents they look after.</p>
+      <p class="status rise" style="--d:.45s"><span class="pill warn">In development</span> This page describes how nook is designed to work.</p>
+    </section>
+    <div class="doc wrap">
+      <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#roles">The people</a></li><li><a href="#journey">The journey</a></li><li><a href="#days">A day in the life</a></li><li><a href="#access">Who can do what</a></li></ul></aside>
+      <div class="doc-main">
+
+        <section class="dsec" id="roles" aria-labelledby="rl-h">
+          <p class="kick reveal">The people</p>
+          <h2 id="rl-h" class="reveal">Eight roles, each with a clear boundary.</h2>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Role</th><th scope="col">Main job</th><th scope="col">Boundary</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Public visitor</th><td>Understand a property without identifying themselves</td><td>Sees only published details, never anything about residents</td></tr>
+              <tr><th scope="row">Prospective resident</th><td>Find a bed, enquire, be admitted</td><td>Identified but not yet a resident. No access to any stay</td></tr>
+              <tr><th scope="row">Current resident</th><td>See their own statement, receipts and requests <em>Later</em></td><td>Their own records only</td></tr>
+              <tr><th scope="row">Owner / partner</th><td>Oversee occupancy, money and who has access</td><td>Broadest access, but can’t bypass the financial rules</td></tr>
+              <tr><th scope="row">Property manager</th><td>Resident lifecycle, allocation, daily operations</td><td>Operational authority. Finance only where granted</td></tr>
+              <tr><th scope="row">Finance clerk / cashier</th><td>Record payments, issue receipts, reconcile</td><td>Can record money arriving, not attest that it did</td></tr>
+              <tr><th scope="row">Warden / front desk</th><td>Who is where, and day-to-day tasks</td><td>No financial or document access by default</td></tr>
+              <tr><th scope="row">nook support</th><td>Help customers when asked</td><td>No standing access. Time-limited, reason-coded and audited</td></tr>
+            </tbody></table></div>
+        </section>
+
+        <section class="dsec" id="journey" aria-labelledby="jo-h">
+          <p class="kick reveal">The journey</p>
+          <h2 id="jo-h" class="reveal">From first look to move-out.</h2>
+          <p class="lead reveal">Every step is designed with its failure case in mind, because that’s where software usually lets people down.</p>
+          <ol class="journey"><li class="reveal"><span class="jn">1</span><div><h4>Discover <em>Later</em></h4><p>A public visitor opens a property and sees only published details, never anything about residents.</p></div></li><li class="reveal"><span class="jn">2</span><div><h4>Explore the layout <em>Later</em></h4><p>Switch floors and see which beds are free and where they are.</p></div></li><li class="reveal"><span class="jn">3</span><div><h4>Enquire <em>Later</em></h4><p>Leave contact details, with phone verification if enabled. If verification fails the enquiry stays unverified and no bed is held.</p></div></li><li class="reveal"><span class="jn">4</span><div><h4>Choose a bed <em>Later</em></h4><p>Pick a specific bed. If it’s taken first, the person is told plainly and sent back to the map, never silently reassigned.</p></div></li><li class="reveal"><span class="jn">5</span><div><h4>Approval</h4><p>Staff review and decide. A rejection records a reason and creates no stay or charge.</p></div></li><li class="reveal"><span class="jn">6</span><div><h4>Allocation</h4><p>The bed is committed atomically, with availability re-checked. A conflict is rejected with current state.</p></div></li><li class="reveal"><span class="jn">7</span><div><h4>Check-in</h4><p>Move-in is recorded and the rent terms are attached to the stay.</p></div></li><li class="reveal"><span class="jn">8</span><div><h4>Living there</h4><p>Charges and payments accrue. Arrears are surfaced for follow-up.</p></div></li><li class="reveal"><span class="jn">9</span><div><h4>Check-out</h4><p>Leaving is recorded first. Financial settlement is a separate step.</p></div></li></ol>
+        </section>
+
+        <section class="dsec" id="days" aria-labelledby="da-h">
+          <p class="kick reveal">A day in the life</p>
+          <h2 id="da-h" class="reveal">What each role actually does.</h2>
+          <div class="jgrid"><div class="jcard reveal"><h3>Property manager</h3><p class="jintro">Admission and allocation.</p><ol><li>Open the enquiry queue and review each applicant against the property’s criteria</li><li>Confirm or change the requested bed, with the map showing live state</li><li>Approve. nook validates the resident, the bed and the stage change in one transaction</li><li>Record move-in. The stay becomes active</li></ol><p class="jfail"><b>If something goes wrong:</b> someone allocated the bed seconds earlier, so the action is rejected and current state is shown instead of overwriting.</p></div><div class="jcard reveal"><h3>Finance clerk</h3><p class="jintro">Recording a payment.</p><ol><li>Open the resident and see outstanding charges, oldest first</li><li>Enter the amount, date, method and reference (UPI id, bank reference or a cash receipt number)</li><li>Choose which charge the payment settles</li><li>Save. The payment and its allocation commit together, or not at all</li><li>Hand over the numbered receipt</li></ol><p class="jfail"><b>If something goes wrong:</b> a duplicate reference is refused and linked to the original, and a retried request returns the first result instead of recording twice.</p></div><div class="jcard reveal"><h3>Owner</h3><p class="jintro">The daily question: who owes money?</p><ol><li>Open the dashboard for outstanding dues by resident, with ageing</li><li>See today’s collections by method, plus current occupancy</li><li>Drill into a resident and read the statement line by line, summing to the balance</li></ol><p class="jfail"><b>If something goes wrong:</b> if a number looks wrong and can’t be explained, trust is lost, which is why the statement is a screen in its own right, not an export.</p></div><div class="jcard reveal"><h3>Warden / front desk</h3><p class="jintro">Knowing who is where.</p><ol><li>Look up which resident is in which bed</li><li>Log a maintenance request</li><li>Get on with the day, with no balances, payment references or documents in view</li></ol><p class="jfail"><b>If something goes wrong:</b> if a warden needs to see money at one property, that’s a deliberate grant by the owner, never a default.</p></div><div class="jcard reveal"><h3>nook support</h3><p class="jintro">Helping a customer.</p><ol><li>Ask for access with a stated reason</li><li>Get time-limited access, if granted</li><li>Every action is audited and visible to the customer</li></ol><p class="jfail"><b>If something goes wrong:</b> there is no standing login. Until a support console exists, support is a conversation.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="access" aria-labelledby="ac2-h">
+          <p class="kick reveal">Who can do what</p>
+          <h2 id="ac2-h" class="reveal">A starting baseline for access.</h2>
+          <p class="lead reveal">Roles are bundles of permissions, and the property owner decides the final grants.</p>
+          <div class="tblwrap reveal"><table class="tbl perm">
+            <thead><tr><th scope="col">Capability</th><th scope="col">Owner</th><th scope="col">Manager</th><th scope="col">Finance</th><th scope="col">Warden</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Organisation settings and members</th><td class="y">Yes</td><td class="n">No</td><td class="n">No</td><td class="n">No</td></tr>
+              <tr><th scope="row">Resident profiles</th><td class="y">Yes</td><td class="s">Scoped</td><td class="s">Scoped</td><td class="s">Scoped</td></tr>
+              <tr><th scope="row">Rooms, beds and assignments</th><td class="y">Yes</td><td class="y">Yes</td><td class="s">Read</td><td class="s">Scoped</td></tr>
+              <tr><th scope="row">Stays and check-out</th><td class="y">Yes</td><td class="y">Yes</td><td class="n">No</td><td class="s">Scoped</td></tr>
+              <tr><th scope="row">Balances and reports</th><td class="y">Yes</td><td class="s">Scoped</td><td class="y">Yes</td><td class="n">No</td></tr>
+              <tr><th scope="row">Record a payment</th><td class="y">Yes</td><td class="n">No</td><td class="y">Yes</td><td class="n">No</td></tr>
+              <tr><th scope="row">Export data</th><td class="y">Yes</td><td class="n">No</td><td class="s">Grant</td><td class="n">No</td></tr>
+              <tr><th scope="row">View the audit trail</th><td class="y">Yes</td><td class="s">Scoped</td><td class="s">Grant</td><td class="n">No</td></tr>
+            </tbody></table></div>
+          <p class="fine reveal"><b>Scoped</b> means only for assigned properties or with an explicit grant. <b>Grant</b> means the owner must grant it, so it doesn’t come with the role.</p>
+          <h3 class="reveal">Three separations nook never collapses</h3>
+          <div class="grid3 reveal">
+            <div class="mini"><h4>Record ≠ confirm</h4><p>Recording that money arrived is not the authority to attest that it did.</p></div>
+            <div class="mini"><h4>Profile ≠ documents</h4><p>Being able to read a profile never implies being able to read identity documents.</p></div>
+            <div class="mini"><h4>View ≠ export</h4><p>Seeing a balance on screen is not permission to take the data out of the system.</p></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>

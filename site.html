@@ -16,7 +16,7 @@
   <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap">
   <link rel="stylesheet" href="site.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -25,15 +25,12 @@
 
   <header class="nav">
     <div class="nav-in">
-      <a class="nav-logo" href="#top" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
-      <nav aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="product.html">Product</a>
-        <a href="security.html">Security</a>
-        <a href="#faq">FAQ</a>
-        <a href="#team">Team</a>
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary" id="primary-nav">
+        <a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a>
       </nav>
       <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span></button>
     </div>
   </header>
 
@@ -46,7 +43,7 @@
         <a class="btn" href="mailto:hello@trynook.in">Get in touch</a>
         <a class="textlink" href="#features">See how it works <span aria-hidden="true">›</span></a>
       </div>
-      <div class="stage rise" style="--d:.6s">
+      <div class="stage rise" id="stage" style="--d:.6s">
         <div class="scene" aria-hidden="true">
           <div class="art">
 
@@ -280,8 +277,15 @@
 
           </div>
         </div>
+        <div class="fc fc1" style="--d:16"><span class="dotg" aria-hidden="true"></span><div><b>Bed 203A</b><small>Available · window side</small></div></div>
+        <div class="fc fc2" style="--d:26"><small>Outstanding</small><b>₹ 3,000</b><span class="pill warn">Partly paid</span></div>
+        <div class="fc fc3" style="--d:12"><svg viewBox="0 0 40 40" aria-hidden="true"><circle class="t" cx="20" cy="20" r="16"/><circle class="a" cx="20" cy="20" r="16" pathLength="100" stroke-dasharray="87 100"/></svg><div><b>87%</b><small>Occupied</small></div></div>
+        <div class="fc fc4" style="--d:20"><span class="okc" aria-hidden="true">✓</span><div><b>Receipt issued</b><small>Cash · ₹ 5,000</small></div></div>
+
       </div>
     </section>
+
+    <div class="marquee" aria-hidden="true"><div class="mq"><span>Floor plans</span><span>Rent ledger</span><span>Receipts</span><span>Admissions</span><span>Check-in &amp; out</span><span>Deposits</span><span>Roles &amp; access</span><span>Reports</span><span>Floor plans</span><span>Rent ledger</span><span>Receipts</span><span>Admissions</span><span>Check-in &amp; out</span><span>Deposits</span><span>Roles &amp; access</span><span>Reports</span></div></div>
 
     <section class="block" id="problem" aria-labelledby="problem-h">
       <div class="wrap">
@@ -296,94 +300,151 @@
       </div>
     </section>
 
-    <section class="block alt feature" id="features" aria-labelledby="map-h">
-      <div class="wrap split">
-        <div class="copy">
-          <p class="kick reveal">Spatial bed map</p>
-          <h2 id="map-h" class="reveal">Choose a bed by where it is.</h2>
-          <p class="sub reveal">In a shared room, beds are not interchangeable. The one by the window, the corner bed and the upper bunk are different things to the person who will sleep there for a year. nook shows the property as a floor plan so everyone sees the same thing.</p>
-          <ul class="ticks reveal">
-            <li>Buildings, floors, rooms and individual beds on one map</li>
-            <li>The map is generated from the inventory staff maintain, so it never drifts</li>
-            <li>Availability is re-checked when an allocation is confirmed, so two people can never be given the same bed</li>
-          </ul>
-        </div>
-        <div class="visual reveal">
-          <div class="device" id="plan">
-            <div class="dev-bar"><span></span><span></span><span></span><p>Floor 2 · Wing A</p></div>
-            <div class="plan"><div class="room"><p class="room-n">Room 201</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 201A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 201B, occupied"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 201C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 201C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 201D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 202</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 202A, occupied"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 202B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 202B, available"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 202C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 202C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 202D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 203</p><div class="beds"><button type="button" class="bed free" data-bed="Bed 203A" data-pos="Window side · lower bunk" aria-pressed="false" aria-label="Bed 203A, available"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 203B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 203B, available"><i></i>B</button><button type="button" class="bed maint" disabled aria-label="Bed 203C, under maintenance"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 203D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 204</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 204A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 204B, occupied"><i></i>B</button><button type="button" class="bed taken" disabled aria-label="Bed 204C, occupied"><i></i>C</button><button type="button" class="bed free" data-bed="Bed 204D" data-pos="Corner · upper bunk" aria-pressed="false" aria-label="Bed 204D, available"><i></i>D</button></div></div></div>
-            <div class="plan-info" aria-live="polite">
-              <p class="pi-title" id="pi-title">Bed 202B</p>
-              <p class="pi-sub" id="pi-sub">Window side · upper bunk</p>
-              <span class="pill ok" id="pi-pill">Available</span>
-            </div>
-            <ul class="legend"><li><i class="free"></i>Available</li><li><i class="sel"></i>Selected</li><li><i class="taken"></i>Occupied</li><li><i class="maint"></i>Maintenance</li></ul>
-          </div>
-          <p class="note">Illustrative demo layout. Click an available bed.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="block feature" aria-labelledby="fin-h">
-      <div class="wrap split flip">
-        <div class="visual reveal">
-          <div class="device ledger" id="ledger">
-            <div class="dev-bar"><span></span><span></span><span></span><p>Resident account</p></div>
-            <ul class="rows">
-              <li><span class="dt">1 Oct</span><span class="ds">Rent · October</span><span class="am dr">₹ 8,000</span></li>
-              <li><span class="dt">3 Oct</span><span class="ds">Payment · UPI</span><span class="am cr">− ₹ 8,000</span></li>
-              <li><span class="dt">1 Nov</span><span class="ds">Rent · November</span><span class="am dr">₹ 8,000</span></li>
-              <li><span class="dt">6 Nov</span><span class="ds">Payment · Cash</span><span class="am cr">− ₹ 5,000</span></li>
+    <section class="block" id="compare" aria-labelledby="cmp-h">
+      <div class="wrap">
+        <p class="kick reveal">Before and after</p>
+        <h2 id="cmp-h" class="reveal">From scattered to single.</h2>
+        <p class="sub reveal">Drag the handle to see the same month, kept two different ways.</p>
+        <div class="cmp reveal" id="cmp" style="--x:50%">
+          <div class="cmp-new" aria-hidden="false">
+            <div class="cn-head"><span class="pill ok">nook</span><b>Resident account</b></div>
+            <ul class="cn-rows">
+              <li><span>1 Oct</span><span>Rent · October</span><b>₹ 8,000</b></li>
+              <li><span>3 Oct</span><span>Payment · UPI</span><b class="cr">− ₹ 8,000</b></li>
+              <li><span>1 Nov</span><span>Rent · November</span><b>₹ 8,000</b></li>
+              <li><span>6 Nov</span><span>Payment · Cash</span><b class="cr">− ₹ 5,000</b></li>
             </ul>
-            <div class="bal"><span>Outstanding</span><strong data-count="3000" data-prefix="₹ ">₹ 3,000</strong></div>
-            <div class="bal-sub"><span class="pill warn">Partly paid</span><span>Receipt issued for each payment</span></div>
+            <div class="cn-bal"><span>Outstanding</span><strong>₹ 3,000</strong></div>
+            <p class="cn-note">Every line explained. Every receipt numbered.</p>
           </div>
-          <p class="note">Illustrative demo data.</p>
-        </div>
-        <div class="copy">
-          <p class="kick reveal">Finance</p>
-          <h2 class="reveal" id="fin-h">Every rupee, explained.</h2>
-          <p class="sub reveal">nook turns the question “who owes what, and why?” into a line-by-line answer, from the first charge to the last payment.</p>
-          <ul class="ticks reveal">
-            <li>Recurring rent charges tied to each resident’s stay</li>
-            <li>Cash, UPI and bank-transfer payments recorded against the right charge, with receipts</li>
-            <li>Posted records are never edited. Corrections are reversals, so the history stays intact</li>
-            <li>Security deposits held separately, with an itemised settlement at checkout</li>
-          </ul>
-          <p class="fine reveal">nook records and reconciles payments. It never holds your money.</p>
+          <div class="cmp-old" aria-hidden="true">
+            <div class="paper">
+              <p class="ink">Oct rent ✓ ( UPI? )</p>
+              <p class="ink">Nov — 5000 cash?? <s>8000</s></p>
+              <p class="ink">who has paid ??</p>
+              <p class="ink small">deposit — see old register p.14</p>
+            </div>
+            <div class="chat"><p>Paid 5000 pls check 🙏</p><p class="img">📷 UPI screenshot</p><p>Did i pay for oct also?</p></div>
+            <div class="sticky">owner: “not sure, ask warden”</div>
+            <span class="tag tag-old">Register, chat &amp; memory</span>
+          </div>
+          <div class="cmp-handle" aria-hidden="true"><span>‹ ›</span></div>
+          <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Compare paper records with nook. Drag to reveal.">
         </div>
       </div>
     </section>
 
-    <section class="block alt feature" aria-labelledby="dash-h">
-      <div class="wrap split">
+    <section class="tour" id="features" aria-labelledby="tour-h">
+      <div class="wrap">
+        <p class="kick kick-l reveal">Product tour</p>
+        <h2 id="tour-h" class="reveal">See nook in action.</h2>
+        <p class="sub reveal">Four screens, one record. Click through, or let it play.</p>
+        <div class="tour-grid reveal" id="tour">
+          <div class="tabs" role="tablist" aria-label="Product tour" aria-orientation="vertical"><button class="tab on" role="tab" id="t1" aria-controls="p1" aria-selected="true" tabindex="0"><span class="tn">01</span><span class="tt"><b>Floor plan</b><small>Choose a bed by where it is</small></span><i class="bar"></i></button><button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="tn">02</span><span class="tt"><b>Admissions</b><small>Approve without double-booking</small></span><i class="bar"></i></button><button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="tn">03</span><span class="tt"><b>Finance</b><small>Every rupee, explained</small></span><i class="bar"></i></button><button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="tn">04</span><span class="tt"><b>Dashboard</b><small>The whole property at a glance</small></span><i class="bar"></i></button></div>
+          <div class="screen">
+            <div class="dev-bar"><span></span><span></span><span></span><p>nook · Demo property</p><em class="demo-tag">Demo data</em></div>
+            <div class="panels">
+              <div class="panel on" role="tabpanel" id="p1" aria-labelledby="t1">
+                <div class="pl-grid">
+                  <div class="plan tplan"><div class="room"><p class="room-n">Room 201</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 201A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 201B, occupied"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 201C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 201C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 201D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 202</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 202A, occupied"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 202B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 202B, available"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 202C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 202C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 202D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 203</p><div class="beds"><button type="button" class="bed free" data-bed="Bed 203A" data-pos="Window side · lower bunk" aria-pressed="false" aria-label="Bed 203A, available"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 203B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 203B, available"><i></i>B</button><button type="button" class="bed maint" disabled aria-label="Bed 203C, under maintenance"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 203D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 204</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 204A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 204B, occupied"><i></i>B</button><button type="button" class="bed taken" disabled aria-label="Bed 204C, occupied"><i></i>C</button><button type="button" class="bed free" data-bed="Bed 204D" data-pos="Corner · upper bunk" aria-pressed="false" aria-label="Bed 204D, available"><i></i>D</button></div></div></div>
+                  <aside class="pl-card"><p class="eb">Selected bed</p><h3 id="tp-title">Bed 203A</h3><p id="tp-sub">Window side · lower bunk</p>
+                    <dl><div><dt>Sharing</dt><dd>4-sharing</dd></div><div><dt>Floor</dt><dd>2</dd></div><div><dt>Rent</dt><dd>Per approved terms</dd></div></dl>
+                    <span class="pill ok">Available</span>
+                    <p class="fine2">Selecting does not reserve this bed. Availability is re-checked when the allocation is committed.</p></aside>
+                </div>
+              </div>
+              <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+                <div class="pl-grid ad">
+                  <ul class="queue">
+                    <li class="on"><span class="av">E1</span><div><b>Enquiry #214</b><small>Requests Bed 203A · Verified</small></div><span class="pill warn">Pending</span></li>
+                    <li><span class="av">E2</span><div><b>Enquiry #213</b><small>Requests Bed 201C · Verified</small></div><span class="pill no">In review</span></li>
+                    <li><span class="av">E3</span><div><b>Enquiry #212</b><small>Requests Bed 204D · Unverified</small></div><span class="pill no">Waiting</span></li>
+                  </ul>
+                  <aside class="pl-card"><p class="eb">Approval · Bed 203A</p>
+                    <ol class="chk" id="chk"><li>Review live availability</li><li>Lock the bed</li><li>Re-check current assignments</li><li>Verify resident &amp; organisation</li><li>Commit in one transaction</li></ol>
+                    <button class="btn btn-sm" type="button" id="replay">Approve again</button></aside>
+                </div>
+              </div>
+              <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+                <div class="led">
+                  <ul class="rows">
+                    <li><span class="dt">1 Oct</span><span class="ds">Rent · October</span><span class="am dr">₹ 8,000</span></li>
+                    <li><span class="dt">3 Oct</span><span class="ds">Payment · UPI</span><span class="am cr">− ₹ 8,000</span></li>
+                    <li><span class="dt">1 Nov</span><span class="ds">Rent · November</span><span class="am dr">₹ 8,000</span></li>
+                    <li><span class="dt">6 Nov</span><span class="ds">Payment · Cash</span><span class="am cr">− ₹ 5,000</span></li>
+                  </ul>
+                  <div class="bal"><span>Outstanding</span><strong data-count="3000" data-prefix="₹ ">₹ 3,000</strong></div>
+                  <div class="bal-sub"><span class="pill warn">Partly paid</span><span>Receipt R-0002 issued</span></div>
+                </div>
+              </div>
+              <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
+                <div class="dash-grid">
+                  <div class="donut"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="48"/><circle class="arc" cx="60" cy="60" r="48" pathLength="100" stroke-dasharray="0 100" data-v="87"/></svg><p><strong data-count="87" data-suffix="%">87%</strong><span>Occupied</span></p></div>
+                  <ul class="stats"><li><span>Beds occupied</span><strong data-count="87">87</strong></li><li><span>Beds free</span><strong data-count="13">13</strong></li><li><span>Residents with dues</span><strong data-count="9">9</strong></li></ul>
+                </div>
+                <div class="bars" aria-hidden="true"><span style="--h:46%"></span><span style="--h:62%"></span><span style="--h:58%"></span><span style="--h:78%"></span><span style="--h:70%"></span><span style="--h:88%"></span><span style="--h:94%"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="note note-l">Illustrative demo data. Pauses when you hover.</p>
+      </div>
+    </section>
+
+    <section class="block alt" id="try" aria-labelledby="try-h">
+      <div class="wrap split2">
         <div class="copy">
-          <p class="kick reveal">Dashboard &amp; reporting</p>
-          <h2 id="dash-h" class="reveal">The whole property, at a glance.</h2>
-          <p class="sub reveal">Owners and partners see occupancy and dues without digging through registers, and get reports both sides can agree on.</p>
-          <ul class="ticks reveal">
-            <li>Live occupancy across buildings and floors</li>
-            <li>Outstanding dues surfaced, so a skipped month never goes unnoticed</li>
-            <li>Reports built from the same ledger staff work in every day</li>
-          </ul>
+          <p class="kick reveal">Try it</p>
+          <h2 id="try-h" class="reveal">Record a payment. Watch the books stay honest.</h2>
+          <p class="sub reveal">This is a live demo of nook’s ledger rules. Try paying too much, reusing a reference, or reversing a payment.</p>
+          <form class="pform reveal" id="pform" novalidate>
+            <label for="pf-amt">Amount (₹)</label>
+            <div class="chips" role="group" aria-label="Quick amounts"><button type="button" data-amt="2000">2,000</button><button type="button" data-amt="5000">5,000</button><button type="button" data-amt="full">Full balance</button></div>
+            <input id="pf-amt" name="amt" type="number" inputmode="numeric" min="1" step="1" value="5000">
+            <label for="pf-m">Method</label>
+            <select id="pf-m" name="m"><option>Cash</option><option>UPI</option><option>Bank transfer</option></select>
+            <div id="pf-refwrap" hidden><label for="pf-ref">Reference <span class="opt">(UPI id or bank reference)</span></label><input id="pf-ref" name="ref" type="text" autocomplete="off" placeholder="e.g. UPI-48213"></div>
+            <p class="form-msg" id="pf-msg" role="status" aria-live="polite"></p>
+            <div class="pf-actions"><button class="btn" type="submit">Record payment</button><button class="textlink linkbtn" type="button" id="pf-reset">Reset demo</button></div>
+          </form>
         </div>
         <div class="visual reveal">
-          <div class="device dash" id="dash">
-            <div class="dev-bar"><span></span><span></span><span></span><p>Overview</p></div>
-            <div class="dash-grid">
-              <div class="donut">
-                <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="trk" cx="60" cy="60" r="48"/><circle class="arc" cx="60" cy="60" r="48" pathLength="100" stroke-dasharray="0 100" data-v="87"/></svg>
-                <p><strong data-count="87" data-suffix="%">87%</strong><span>Occupied</span></p>
-              </div>
-              <ul class="stats">
-                <li><span>Beds occupied</span><strong data-count="87">87</strong></li>
-                <li><span>Beds free</span><strong data-count="13">13</strong></li>
-                <li><span>Residents with dues</span><strong data-count="9">9</strong></li>
-              </ul>
-            </div>
-            <div class="bars" aria-hidden="true"><span style="--h:46%"></span><span style="--h:62%"></span><span style="--h:58%"></span><span style="--h:78%"></span><span style="--h:70%"></span><span style="--h:88%"></span><span style="--h:94%"></span></div>
+          <div class="device ledger play" id="play">
+            <div class="dev-bar"><span></span><span></span><span></span><p>Resident account</p><em class="demo-tag">Demo data</em></div>
+            <ul class="rows" id="pl-rows"></ul>
+            <div class="bal"><span>Outstanding</span><strong id="pl-bal">₹ 0</strong></div>
+            <div class="bal-sub"><span class="pill warn" id="pl-pill">Unpaid</span><span id="pl-rcpt"></span></div>
           </div>
-          <p class="note">Illustrative demo data.</p>
+          <p class="note">Nothing here is sent anywhere. It runs in your browser.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="property" aria-labelledby="prop-h">
+      <div class="wrap split2">
+        <div class="visual reveal bwrap">
+          <svg class="bld" viewBox="0 0 520 450" role="group" aria-label="Illustrative four-storey hostel building. Select a floor.">
+            <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2063"/><stop offset="1" stop-color="#171338"/></linearGradient></defs>
+            <rect x="0" y="0" width="520" height="450" rx="28" fill="url(#sky)"/>
+            <circle cx="438" cy="52" r="20" fill="#F4F1FF" opacity=".9"/><circle cx="430" cy="46" r="18" fill="#2a2063"/>
+            <g fill="#fff" opacity=".7"><circle cx="70" cy="40" r="1.5"/><circle cx="150" cy="28" r="1.2"/><circle cx="300" cy="42" r="1.4"/><circle cx="370" cy="24" r="1.2"/><circle cx="40" cy="96" r="1.1"/></g>
+            <path d="M62 72h396l-14-22H76z" fill="#0f0b2a"/>
+            <g class="fl" role="button" tabindex="0" data-f="3" aria-label="Floor 3, show details"><rect class="slab" x="72" y="72" width="376" height="86" rx="4"/><rect class="w occ" x="92" y="94" width="40" height="46" rx="6" style="--i:0"/><rect class="w occ" x="150" y="94" width="40" height="46" rx="6" style="--i:1"/><rect class="w occ" x="208" y="94" width="40" height="46" rx="6" style="--i:2"/><rect class="w fre" x="266" y="94" width="40" height="46" rx="6" style="--i:3"/><rect class="w occ" x="324" y="94" width="40" height="46" rx="6" style="--i:4"/><rect class="w occ" x="382" y="94" width="40" height="46" rx="6" style="--i:5"/><text x="458" y="124" class="fl-n">3</text></g><g class="fl" role="button" tabindex="0" data-f="2" aria-label="Floor 2, show details"><rect class="slab" x="72" y="162" width="376" height="86" rx="4"/><rect class="w occ" x="92" y="184" width="40" height="46" rx="6" style="--i:0"/><rect class="w occ" x="150" y="184" width="40" height="46" rx="6" style="--i:1"/><rect class="w occ" x="208" y="184" width="40" height="46" rx="6" style="--i:2"/><rect class="w occ" x="266" y="184" width="40" height="46" rx="6" style="--i:3"/><rect class="w occ" x="324" y="184" width="40" height="46" rx="6" style="--i:4"/><rect class="w fre" x="382" y="184" width="40" height="46" rx="6" style="--i:5"/><text x="458" y="214" class="fl-n">2</text></g><g class="fl" role="button" tabindex="0" data-f="1" aria-label="Floor 1, show details"><rect class="slab" x="72" y="252" width="376" height="86" rx="4"/><rect class="w occ" x="92" y="274" width="40" height="46" rx="6" style="--i:0"/><rect class="w occ" x="150" y="274" width="40" height="46" rx="6" style="--i:1"/><rect class="w occ" x="208" y="274" width="40" height="46" rx="6" style="--i:2"/><rect class="w occ" x="266" y="274" width="40" height="46" rx="6" style="--i:3"/><rect class="w occ" x="324" y="274" width="40" height="46" rx="6" style="--i:4"/><rect class="w occ" x="382" y="274" width="40" height="46" rx="6" style="--i:5"/><text x="458" y="304" class="fl-n">1</text></g><g class="fl" role="button" tabindex="0" data-f="G" aria-label="Ground floor, show details"><rect class="slab" x="72" y="342" width="376" height="86" rx="4"/><rect class="w occ" x="92" y="364" width="40" height="46" rx="6" style="--i:0"/><rect class="w occ" x="150" y="364" width="40" height="46" rx="6" style="--i:1"/><rect class="w occ" x="208" y="364" width="40" height="46" rx="6" style="--i:2"/><rect class="w fre" x="266" y="364" width="40" height="46" rx="6" style="--i:3"/><rect class="w mnt" x="324" y="364" width="40" height="46" rx="6" style="--i:4"/><rect class="w occ" x="382" y="364" width="40" height="46" rx="6" style="--i:5"/><text x="458" y="394" class="fl-n">G</text></g>
+            <path class="door" d="M236 428V402a24 24 0 0 1 48 0v26z"/>
+            <rect x="40" y="428" width="440" height="6" rx="3" fill="#0f0b2a"/>
+          </svg>
+          <p class="note">Illustrative building. Select a floor.</p>
+        </div>
+        <div class="copy">
+          <p class="kick reveal">Your property</p>
+          <h2 id="prop-h" class="reveal">Floor by floor, bed by bed.</h2>
+          <p class="sub reveal">Every floor, room and bed in one place, so occupancy is something you look at.</p>
+          <div class="fcard reveal" id="fcard" aria-live="polite">
+            <div class="fc-top"><h3 id="fc-t">Floor 2</h3><span class="pill ok" id="fc-p">Mostly full</span></div>
+            <div class="meter"><i id="fc-m" style="width:0%"></i></div>
+            <dl class="fc-dl"><div><dt>Rooms</dt><dd id="fc-r">8</dd></div><div><dt>Beds occupied</dt><dd id="fc-o">29 of 32</dd></div><div><dt>With dues</dt><dd id="fc-d">3</dd></div></dl>
+            <p class="legend2"><span class="l o"></span>Occupied <span class="l f"></span>Free <span class="l m"></span>Maintenance</p>
+          </div>
         </div>
       </div>
     </section>
@@ -462,6 +523,7 @@
           <details><summary>Is nook available yet?</summary><p>nook is in development, starting with a pilot property in Pune. If you run a hostel or PG and want to shape what comes next, we’d like to hear from you at <a href="mailto:hello@trynook.in">hello@trynook.in</a>.</p></details>
           <details><summary>Is resident information kept private?</summary><p>nook is designed so that no resident name, contact, document or balance is reachable through any public page. <a href="security.html">Read how we approach security and privacy.</a></p></details>
         </div>
+        <p class="more reveal"><a class="textlink" href="faq.html">See all questions <span aria-hidden="true">›</span></a></p>
       </div>
     </section>
 
@@ -494,7 +556,7 @@
     <div class="wrap">
       <div class="foot-top">
         <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
-        <nav aria-label="Footer"><a href="#features">Features</a><a href="product.html">Product</a><a href="security.html">Security</a><a href="#faq">FAQ</a><a href="#team">Team</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+        <nav aria-label="Footer"><a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:hello@trynook.in">Contact</a></nav>
       </div>
       <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
     </div>
@@ -535,6 +597,7 @@
 
   <script src="contact.js"></script>
   <script src="reveal.js"></script>
-  <script src="visuals.js"></script>
+  <script src="home.js"></script>
+  <script src="page.js"></script>
 </body>
 </html>

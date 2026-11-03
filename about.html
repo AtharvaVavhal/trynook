@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>About nook</title>
+  <meta name="description" content="Why nook is being built and who is building it.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="About nook">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary" id="primary-nav">
+        <a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html" aria-current="page">About</a><a href="faq.html">FAQ</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">About</p>
+      <h1 class="rise" style="--d:.15s">Why we’re building nook.</h1>
+      <p class="lede rise" style="--d:.3s">Independent hostels and PGs deserve software as dependable as the buildings they run.</p>
+    </section>
+    <div class="doc wrap">
+      <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#mission">Mission</a></li><li><a href="#problem">The problem</a></li><li><a href="#principles">How we build</a></li><li><a href="#who">Who it’s for</a></li><li><a href="#team">The team</a></li></ul></aside>
+      <div class="doc-main">
+
+        <section class="dsec" id="mission" aria-labelledby="mi-h">
+          <p class="kick reveal">Mission</p>
+          <h2 id="mi-h" class="reveal">One dependable record.</h2>
+          <p class="lead reveal">Give independent accommodation operators one dependable record of their property, their residents and their money, so the answer to any question about any of the three is the same wherever it is asked.</p>
+          <div class="callout reveal"><b>Our vision.</b> Make the physical building the interface. A property’s layout, occupancy and availability should be something you look at and understand, not something you reconstruct from a spreadsheet. Choosing a bed online should feel like choosing a seat on a flight, and managing a hundred of them should feel like looking at a floor plan.</div>
+        </section>
+
+        <section class="dsec" id="problem" aria-labelledby="pb-h">
+          <p class="kick reveal">The problem</p>
+          <h2 id="pb-h" class="reveal">What goes wrong on paper.</h2>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Pain</th><th scope="col">What it looks like in practice</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">No single source of truth for dues</th><td>The register, WhatsApp screenshots and memory disagree, and nobody can prove which is right</td></tr>
+              <tr><th scope="row">Silent revenue leakage</th><td>A resident skips a month and is never chased because nothing surfaces it</td></tr>
+              <tr><th scope="row">Deposit disputes</th><td>A year of informal records gets argued over at the door</td></tr>
+              <tr><th scope="row">Manual reconciliation</th><td>Cash, UPI and bank credits are matched by hand every month, for partners who need agreed numbers</td></tr>
+              <tr><th scope="row">Opaque occupancy</th><td>Which bed is free, from when, and who had it before lives in memory and on paper</td></tr>
+            </tbody></table></div>
+          <p class="reveal">The first test of nook is simple: can the owner answer “who owes what, and why?” faster and more reliably than from the register?</p>
+        </section>
+
+        <section class="dsec" id="principles" aria-labelledby="pr2-h">
+          <p class="kick reveal">How we build</p>
+          <h2 id="pr2-h" class="reveal">Principles we hold to.</h2>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>Money first, and honestly</h4><p>The financial record has to be right before anything else. Nothing posted is rewritten.</p></div>
+            <div class="mini"><h4>Your words, your rules</h4><p>nook uses the names and policies your property already has instead of imposing a template.</p></div>
+            <div class="mini"><h4>A human stays in charge</h4><p>Decisions such as who is admitted stay with people. nook records them, it doesn’t automate them away.</p></div>
+            <div class="mini"><h4>Start small, prove it, then grow</h4><p>Each stage has to earn the next, and we won’t claim what we haven’t built.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="who" aria-labelledby="wh-h">
+          <p class="kick reveal">Who it’s for</p>
+          <h2 id="wh-h" class="reveal">Independent, owner-run properties.</h2>
+          <ul class="ticks reveal">
+            <li>Hostels, PGs and small co-living properties, typically 30 to 300 beds</li>
+            <li>One property or a handful, run by an owner who is also the decision-maker</li>
+            <li>Currently running on paper registers or general-purpose spreadsheets</li>
+            <li>Starting in Pune, where we can work alongside a property in person</li>
+          </ul>
+        </section>
+
+        <section class="dsec" id="team" aria-labelledby="tm-h">
+          <p class="kick reveal">The team</p>
+          <h2 id="tm-h" class="reveal">Built by.</h2>
+          <ul class="people reveal">
+            <li><h3>Atharva Vavhal</h3><p>Computer Engineering (Software Engineering)<br>Vishwakarma Institute of Technology</p><a class="textlink" href="https://www.linkedin.com/in/atharva-vavhal/" target="_blank" rel="noopener noreferrer" aria-label="Atharva Vavhal on LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">›</span></a></li>
+            <li><h3>Sharwari Patil</h3><p>Computer Engineering<br>Vishwakarma Institute of Technology</p><a class="textlink" href="https://www.linkedin.com/in/sharwari-patil-vit/" target="_blank" rel="noopener noreferrer" aria-label="Sharwari Patil on LinkedIn (opens in a new tab)">LinkedIn <span aria-hidden="true">›</span></a></li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>

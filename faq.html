@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nook FAQ</title>
+  <meta name="description" content="Answers to common questions about nook.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="nook FAQ">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary" id="primary-nav">
+        <a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html" aria-current="page">FAQ</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">FAQ</p>
+      <h1 class="rise" style="--d:.15s">Questions, answered.</h1>
+      <p class="lede rise" style="--d:.3s">Everything we’re asked about nook, in one place.</p>
+    </section>
+
+    <div class="wrap narrow faqwrap">
+      <label class="fsearch" for="fsearch"><span class="sr-only">Search questions</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="fsearch" type="search" placeholder="Search questions" autocomplete="off">
+      </label>
+      <p class="fnone" id="fnone" hidden>No questions match. Try another word, or <a class="textlink" href="mailto:hello@trynook.in">ask us directly</a>.</p>
+      <section class="fgroup reveal" data-g><h2>General</h2><div class="faq"><details class="qa"><summary>What is nook?</summary><p>A management platform for hostels, PGs and co-living properties. It keeps one record of your buildings and beds, the people staying in them, the rent they owe and the deposits you hold, with maintenance and reporting around it.</p></details><details class="qa"><summary>Who is it for?</summary><p>Independent, owner-operated properties, typically 30 to 300 beds, that currently run on paper registers or spreadsheets.</p></details><details class="qa"><summary>Is nook available yet?</summary><p>nook is in development, starting with a pilot property in Pune. If you run a hostel or PG and want to shape what comes next, write to <a href="mailto:hello@trynook.in">hello@trynook.in</a>.</p></details><details class="qa"><summary>Does it work on a phone?</summary><p>Yes. Staff often work from a corridor, so the staff web app is designed to be usable on a phone, and the spatial map is designed for touch. A separate resident app is a later phase.</p></details><details class="qa"><summary>How much does it cost?</summary><p>Pricing hasn’t been announced yet. Get in touch and we’ll tell you where things stand.</p></details></div></section><section class="fgroup reveal" data-g><h2>Property &amp; inventory</h2><div class="faq"><details class="qa"><summary>Can I use my own room and bed names?</summary><p>Yes. If you call a room “Annexe 2”, nook calls it “Annexe 2”. Labels are yours.</p></details><details class="qa"><summary>Can I manage more than one property?</summary><p>Yes. The design supports several properties under one owner. Reports roll up for owners, while staff only see the properties they’re assigned to.</p></details><details class="qa"><summary>What if I re-plan a room that people are living in?</summary><p>nook refuses destructive changes to occupied inventory and tells you exactly which records are in the way. Nothing is deleted or reassigned automatically.</p></details><details class="qa"><summary>Can I see who was in a bed last March?</summary><p>Yes. Assignments are recorded with dates and never overwritten, so a bed’s history can be reconstructed for any past date.</p></details></div></section><section class="fgroup reveal" data-g><h2>Admissions &amp; allocation</h2><div class="faq"><details class="qa"><summary>Can residents book a bed instantly?</summary><p>Not unless the owner turns that on. By default, an enquiry reaches staff, staff decide, and only then is a bed allocated.</p></details><details class="qa"><summary>Does choosing a bed reserve it?</summary><p>No. A choice is a preference that travels with the enquiry. The bed stays available to others until an allocation is committed.</p></details><details class="qa"><summary>Can two residents be given the same bed?</summary><p>No. Approval locks the bed, re-checks availability on the server and commits in a single step. If two staff approve at once, one succeeds and the other is told why.</p></details></div></section><section class="fgroup reveal" data-g><h2>Money</h2><div class="faq"><details class="qa"><summary>Does nook take payments?</summary><p>No. Residents pay the property directly by cash, UPI or bank transfer. nook records those payments and reconciles them against what was owed. It never holds your money.</p></details><details class="qa"><summary>What if I record a payment wrongly?</summary><p>Posted records aren’t edited or deleted. You reverse the entry and record the right one, so the full history stays visible.</p></details><details class="qa"><summary>Are deposits counted as revenue?</summary><p>No. A deposit is a liability held separately, and it’s kept out of collection and revenue figures by design.</p></details><details class="qa"><summary>When is rent charged?</summary><p>Billing follows each resident’s own admission date. Someone admitted on the 17th is billed on the 17th, not in a month-end batch.</p></details></div></section><section class="fgroup reveal" data-g><h2>Privacy &amp; security</h2><div class="faq"><details class="qa"><summary>Who can see resident information?</summary><p>Only people whose role needs it, within the properties they’re assigned to. Wardens and front desk have no financial or document access by default.</p></details><details class="qa"><summary>Does nook store identity documents?</summary><p>The pilot doesn’t collect or upload identity documents.</p></details><details class="qa"><summary>Can other hostels see my data?</summary><p>No. Each organisation’s data is kept separate, and a request for another organisation’s record gets “not found”.</p></details><details class="qa"><summary>Has nook been security audited?</summary><p>Not yet. nook is still being built and hasn’t had an independent audit or penetration test. We’ll say so when that changes. See <a href="security.html">Security &amp; privacy</a>.</p></details></div></section>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>

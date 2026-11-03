@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nook Spatial map — choose a bed by where it is</title>
+  <meta name="description" content="How nook’s interactive floor plan works for residents and staff.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="nook Spatial map — choose a bed by where it is">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary" id="primary-nav">
+        <a href="product.html">Product</a><a href="spatial-map.html" aria-current="page">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+      <button class="menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">Spatial map</p>
+      <h1 class="rise" style="--d:.15s">The building is the interface.</h1>
+      <p class="lede rise" style="--d:.3s">A floor plan that residents and staff both read from the same record.</p>
+      <p class="status rise" style="--d:.45s"><span class="pill warn">In design</span> The spatial map is nook’s headline idea and is still being specified and built.</p>
+    </section>
+    <div class="doc wrap">
+      <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#why">Why a map</a></li><li><a href="#model">How it’s modelled</a></li><li><a href="#view">What it does</a></li><li><a href="#phone">On a phone</a></li><li><a href="#access">Accessibility</a></li><li><a href="#staff">For staff</a></li><li><a href="#rule">The rule that matters</a></li></ul></aside>
+      <div class="doc-main">
+
+        <section class="dsec" id="why" aria-labelledby="w-h">
+          <p class="kick reveal">Why a map</p>
+          <h2 id="w-h" class="reveal">Beds are not interchangeable.</h2>
+          <p class="lead reveal">The bed by the window, the one beside the door, the upper bunk and the corner are very different to the person who will live there for a year. Most software reduces them to identical rows in a dropdown.</p>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>For residents</h4><p>Understand a property in seconds and choose a bed by where it actually is, instead of needing a phone call to explain.</p></div>
+            <div class="mini"><h4>For staff</h4><p>See occupancy as a shape: which rooms are full, where vacancies cluster and which floor is emptying.</p></div>
+          </div>
+          <div class="callout reveal"><b>One record, two audiences.</b> The map a resident browses is generated from the inventory staff maintain. It isn’t a marketing illustration drawn separately and left to drift.</div>
+        </section>
+
+        <section class="dsec" id="model" aria-labelledby="m-h">
+          <p class="kick reveal">How it’s modelled</p>
+          <h2 id="m-h" class="reveal">From property down to the bed.</h2>
+          <ol class="flow chain reveal" aria-label="Spatial hierarchy">
+            <li style="--i:0">Property</li><li style="--i:1">Building</li><li style="--i:2">Floor</li><li style="--i:3">Room</li><li style="--i:4">Bed</li>
+          </ol>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Level</th><th scope="col">What it is</th><th scope="col">Position on the map</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Property</th><td>One premises at one address</td><td>None. A container</td></tr>
+              <tr><th scope="row">Building</th><td>A structure within the property, often just one</td><td>None, until a site plan exists</td></tr>
+              <tr><th scope="row">Floor</th><td>A level, ordered so “above” and “below” mean something</td><td>Carries the layout. The floor is what the map draws</td></tr>
+              <tr><th scope="row">Room</th><td>An enclosed space with the label you already use, such as “203” or “Annexe 2”</td><td>An outline on the floor’s layout</td></tr>
+              <tr><th scope="row">Bed</th><td>The one thing that is allocated, labelled A, B, C, D within its room</td><td>Its own position inside the room</td></tr>
+            </tbody></table></div>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>Identity and position are separate</h4><p>“Room 203, Bed C” is a stable identifier that appears on receipts and agreements. Moving where a bed is drawn never changes which bed it is.</p></div>
+            <div class="mini"><h4>Layouts are versioned</h4><p>When a property is re-planned, a new layout is drafted and published. A past resident’s record still shows the plan that was true when they lived there.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="view" aria-labelledby="v-h">
+          <p class="kick reveal">What the map does</p>
+          <h2 id="v-h" class="reveal">Try the idea.</h2>
+          <div class="visual reveal demo">
+<div class="device" id="plan">
+            <div class="dev-bar"><span></span><span></span><span></span><p>Floor 2 · Wing A</p></div>
+            <div class="plan"><div class="room"><p class="room-n">Room 201</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 201A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 201B, occupied"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 201C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 201C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 201D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 202</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 202A, occupied"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 202B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 202B, available"><i></i>B</button><button type="button" class="bed free" data-bed="Bed 202C" data-pos="Near the door · lower bunk" aria-pressed="false" aria-label="Bed 202C, available"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 202D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 203</p><div class="beds"><button type="button" class="bed free" data-bed="Bed 203A" data-pos="Window side · lower bunk" aria-pressed="false" aria-label="Bed 203A, available"><i></i>A</button><button type="button" class="bed free" data-bed="Bed 203B" data-pos="Window side · upper bunk" aria-pressed="false" aria-label="Bed 203B, available"><i></i>B</button><button type="button" class="bed maint" disabled aria-label="Bed 203C, under maintenance"><i></i>C</button><button type="button" class="bed taken" disabled aria-label="Bed 203D, occupied"><i></i>D</button></div></div><div class="room"><p class="room-n">Room 204</p><div class="beds"><button type="button" class="bed taken" disabled aria-label="Bed 204A, occupied"><i></i>A</button><button type="button" class="bed taken" disabled aria-label="Bed 204B, occupied"><i></i>B</button><button type="button" class="bed taken" disabled aria-label="Bed 204C, occupied"><i></i>C</button><button type="button" class="bed free" data-bed="Bed 204D" data-pos="Corner · upper bunk" aria-pressed="false" aria-label="Bed 204D, available"><i></i>D</button></div></div></div>
+            <div class="plan-info" aria-live="polite">
+              <p class="pi-title" id="pi-title">Bed 202B</p>
+              <p class="pi-sub" id="pi-sub">Window side · upper bunk</p>
+              <span class="pill ok" id="pi-pill">Available</span>
+            </div>
+            <ul class="legend"><li><i class="free"></i>Available</li><li><i class="sel"></i>Selected</li><li><i class="taken"></i>Occupied</li><li><i class="maint"></i>Maintenance</li></ul>
+          </div>
+            <p class="note">Illustrative demo layout. Click an available bed.</p>
+          </div>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Capability</th><th scope="col">How it behaves</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Top-down layout</th><td>Rooms drawn with their real labels, with corridors and stairs shown so you can orient yourself</td></tr>
+              <tr><th scope="row">Positioned beds</th><td>Each bed sits at its own spot in its room, large enough to tap comfortably</td></tr>
+              <tr><th scope="row">One selection</th><td>Exactly one bed is selected at a time, clearly different from hover and keyboard focus</td></tr>
+              <tr><th scope="row">Floor switching</th><td>Move between floors without losing your filters. An unconfigured floor says so instead of showing a blank</td></tr>
+              <tr><th scope="row">Details panel</th><td>Choose a bed to see its sharing, position, floor, state and what you can do next</td></tr>
+              <tr><th scope="row">Search and filter</th><td>Filtering dims other beds rather than removing them, so you never lose the layout around them</td></tr>
+              <tr><th scope="row">State at a glance</th><td>Available, occupied or unavailable, shown with tint and text, never colour alone</td></tr>
+              <tr><th scope="row">Honest when offline</th><td>If live availability can’t be loaded, the map says the data is stale and turns selection off, rather than showing old availability as current</td></tr>
+            </tbody></table></div>
+        </section>
+
+        <section class="dsec" id="phone" aria-labelledby="ph-h">
+          <p class="kick reveal">On a phone</p>
+          <h2 id="ph-h" class="reveal">Designed for a thumb.</h2>
+          <p class="lead reveal">Most prospective residents will be on a phone, and plenty of staff work from the corridor.</p>
+          <ul class="ticks reveal">
+            <li>One-finger pan, pinch to zoom, tap to select</li>
+            <li>Details open in a bottom sheet, and the floor switcher sits within thumb reach</li>
+            <li>Bed targets are at least 44 px at the default zoom, or the map opens zoomed to one room at a time</li>
+          </ul>
+        </section>
+
+        <section class="dsec" id="access" aria-labelledby="ac-h">
+          <p class="kick reveal">For everyone</p>
+          <h2 id="ac-h" class="reveal">Accessible from the start.</h2>
+          <p class="lead reveal">A canvas of clickable shapes is unusable without a keyboard or a screen reader, so accessibility is a requirement, not a later polish.</p>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>Full keyboard use</h4><p>Floors, then rooms, then beds in order. Arrow keys move between beds in a room, and a visible focus ring survives any status colour.</p></div>
+            <div class="mini"><h4>Beds say what they are</h4><p>“Room 203, Bed C, window side, available, selected”, not just a letter. Changes are announced.</p></div>
+          </div>
+          <div class="callout reveal"><b>A list is a peer, not a fallback.</b> Alongside the plan sits a structured list of floors, rooms and beds that does the same thing from the same data, released at the same time. If the only way to choose a bed were to click a shape, the product would exclude people for no reason.</div>
+        </section>
+
+        <section class="dsec" id="staff" aria-labelledby="st-h">
+          <p class="kick reveal">For staff</p>
+          <h2 id="st-h" class="reveal">Keep it current as part of the job.</h2>
+          <ul class="ticks reveal">
+            <li>Staff place room outlines and bed positions on a floor with an editor, using the same data residents see</li>
+            <li>Edits collect in a draft and go live only when published, so nobody is re-planned under a resident mid-edit</li>
+            <li>Publishing checks the geometry: no overlapping beds, no bed outside its room, no overlapping rooms</li>
+            <li>Beds without a position still exist and can be allocated. They’re simply flagged as not drawn yet</li>
+          </ul>
+        </section>
+
+        <section class="dsec" id="rule" aria-labelledby="r-h">
+          <p class="kick reveal">The rule that matters</p>
+          <h2 id="r-h" class="reveal">The map is a view, never the authority.</h2>
+          <p class="lead reveal">A bed shown as free is a display computed when the page loaded. It is not a reservation and not a guarantee.</p>
+          <ol class="stepsx reveal">
+            <li><b>Displayed availability.</b> What the map shows right now.</li>
+            <li><b>Selection.</b> Your preference. It does not hold the bed.</li>
+            <li><b>Confirmed allocation.</b> The server re-checks availability inside a transaction before committing, and rejects conflicts.</li>
+          </ol>
+          <p class="reveal"><a class="textlink" href="product.html#admission">See how allocation works <span aria-hidden="true">›</span></a></p>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="product.html">Product</a><a href="spatial-map.html">Spatial map</a><a href="who-its-for.html">Who it’s for</a><a href="security.html">Security</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>
