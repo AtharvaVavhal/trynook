@@ -516,3 +516,9 @@ h2 .pill { font-size: 12px; letter-spacing: 0; }
 .cmp-old { padding-top: 64px; }
 @media (max-width: 960px) { .cmp-new { margin-left: 50%; padding-left: 5%; } }
 @media (max-width: 560px) { .cmp-new { margin-left: 0; } }
+
+/* hero refinement: larger doorway, tighter panel, cards closer to the door */
+.stage { height: clamp(300px, 44vw, 540px); }
+.stage .scene .art { --k: calc(100cqh / 540); left: calc(50cqw - 883 * var(--k)); top: calc(-190 * var(--k)); }
+.fc1 { left: 14%; top: 20%; } .fc2 { right: 14%; top: 24%; } .fc3 { left: 16%; bottom: 14%; } .fc4 { right: 15%; bottom: 13%; }
+@media (max-width: 860px) { .stage { height: clamp(280px, 70vw, 420px); } .fc1 { left: 4%; } .fc2 { right: 4%; } }
