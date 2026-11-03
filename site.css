@@ -1,0 +1,66 @@
+:root {
+  --indigo: #171338; --violet: #7657F6; --lav: #F4F1FF; --white: #fff;
+  --panel: rgba(244,241,255,.06); --line: rgba(244,241,255,.14); --muted: rgba(244,241,255,.72);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--indigo); color: var(--lav);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-image: radial-gradient(900px 500px at 80% -5%, rgba(118,87,246,.28), transparent 70%);
+  background-repeat: no-repeat;
+}
+a { color: inherit; }
+img { display: block; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--white); color: var(--indigo); padding: 8px 12px; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 8px; }
+:focus-visible { outline: 2px solid var(--lav); outline-offset: 3px; }
+
+.nav { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center;
+  padding: 14px max(20px, 4vw); background: rgba(23,19,56,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav nav { display: flex; align-items: center; gap: 22px; }
+.nav nav a:not(.btn) { text-decoration: none; color: var(--muted); font-size: 15px; }
+.nav nav a:not(.btn):hover { color: var(--white); }
+
+.btn { display: inline-block; background: var(--violet); color: var(--white); text-decoration: none; font-weight: 600;
+  padding: 14px 26px; border-radius: 999px; border: 1px solid transparent; transition: transform .15s, background .15s; }
+.btn:hover { background: #8a6fff; transform: translateY(-1px); }
+.btn-sm { padding: 8px 18px; font-size: 15px; }
+.btn-ghost { background: transparent; border-color: var(--line); }
+.btn-ghost:hover { background: var(--panel); }
+
+main > section { padding: 88px max(20px, 4vw); max-width: 1120px; margin: 0 auto; }
+.hero { text-align: center; padding-top: 120px; padding-bottom: 100px; }
+.eyebrow { letter-spacing: .24em; text-transform: uppercase; font-size: 13px; color: var(--muted); margin: 0 0 20px; }
+h1 { font-size: clamp(2.6rem, 8vw, 5.4rem); line-height: 1.04; letter-spacing: -.03em; margin: 0 0 24px; color: var(--white); }
+.accent { background: linear-gradient(90deg, #7657F6, #B9A6FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede { font-size: clamp(1.1rem, 2.4vw, 1.4rem); color: var(--muted); max-width: 36ch; margin: 0 auto 36px; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; margin: 0 0 8px; color: var(--white); }
+h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--white); }
+.section-sub { color: var(--muted); margin: 0 0 36px; }
+
+.cards, .steps { list-style: none; padding: 0; margin: 36px 0 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.cards li, .steps li { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 26px; }
+.cards p, .steps p { margin: 0; color: var(--muted); }
+.n { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--violet); color: var(--white); font-weight: 700; margin-bottom: 14px; }
+
+.faq { margin-top: 28px; border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+summary { cursor: pointer; font-weight: 600; color: var(--white); }
+details p { margin: 10px 0 0; color: var(--muted); }
+
+.cta { text-align: center; background: var(--panel); border: 1px solid var(--line); border-radius: 28px; margin-bottom: 80px; }
+main > section.cta { max-width: calc(1120px - 8vw); padding: 64px 24px; }
+.cta p { color: var(--muted); margin: 0 0 26px; }
+
+.foot { border-top: 1px solid var(--line); padding: 32px max(20px, 4vw); display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: space-between; color: var(--muted); }
+.foot p { margin: 0; }
+.small { font-size: 14px; }
+
+@media (max-width: 640px) {
+  .nav nav a:not(.btn) { display: none; }
+  main > section { padding-top: 64px; padding-bottom: 64px; }
+}

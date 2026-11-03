@@ -2,9 +2,9 @@
 
 A standalone, dependency-free countdown page: HTML, CSS and vanilla JavaScript. No build step, backend, analytics or data collection.
 
-## ⚠️ Legal status
+## Legal status
 
-The brand guidelines (`nook-brand-guidelines.md`) state that **nook is a working brand name. Trademark clearance, domain availability and legal ownership are unverified, and public brand launch and domain commitment are blocked pending review of the Nook / Nooks competitive conflict.** This project does not claim legal clearance, and `trynook.in` is shown as text only (not linked). **Do not publish or point a domain at this page until legal review is complete.**
+Trademark/legal review has been cleared (confirmed by the owner, 3 Nov 2026).
 
 ## Run locally
 
@@ -20,7 +20,8 @@ python3 -m http.server 8080   # then visit http://localhost:8080
 |---|---|
 | `index.html` | Semantic markup, SEO and Open Graph metadata |
 | `styles.css` | Layout, type, motion (honours `prefers-reduced-motion`) |
-| `script.js` | Countdown logic |
+| `script.js` | Countdown logic; redirects to `site.html` at launch |
+| `site.html`, `site.css` | Post-launch site (placeholder copy; contact `hello@trynook.in` is a placeholder address) |
 | `assets/` | Official brand assets (see `ASSET_INVENTORY.md`) |
 | `nook-brand-guidelines.md` | Official guidelines |
 
@@ -30,7 +31,7 @@ Assets used: `assets/svg/nook-lockup-stacked-white.svg` (stacked white lockup, p
 
 - Target: **4 November 2026, 12:00 PM IST**, encoded as `2026-11-04T12:00:00+05:30`. This is one absolute instant, so the result does not depend on the visitor's timezone.
 - Ticks aligned to second boundaries; pauses when the tab is hidden and resyncs on return.
-- At or after the target the timer is replaced by a launch-day message.
+- At or after the target the page redirects to `site.html` (the `?now=` override is kept, so previews work).
 - Screen readers get a once-per-minute update instead of per-second chatter.
 
 ### Previewing other times

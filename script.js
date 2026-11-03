@@ -3,7 +3,7 @@
 
   // 4 November 2026, 12:00 PM Asia/Kolkata. IST is a fixed UTC+05:30 offset (no DST),
   // so this ISO string denotes one absolute instant regardless of the visitor's timezone.
-  var LAUNCH_ISO = '2026-11-04T00:00:00+05:30';
+  var LAUNCH_ISO = '2026-11-04T12:00:00+05:30';
   var LAUNCH_MS = Date.parse(LAUNCH_ISO);
 
   // Pure: remaining time split into units. Exposed for testing.
@@ -69,6 +69,8 @@
     var r = breakdown(LAUNCH_MS - now());
 
     if (r.done) {
+      // Launch time reached: go to the full site (preserves ?now= previews for testing).
+      try { window.location.replace('site.html' + window.location.search); return false; } catch (e) { /* fall through */ }
       els.timer.hidden = true;
       els.launched.hidden = false;
       if (lastAnnounced !== -2) {
