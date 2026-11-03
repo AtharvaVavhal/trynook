@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nook Security &amp; privacy</title>
+  <meta name="description" content="How nook is designed to protect resident details and financial records.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="nook Security &amp; privacy">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary">
+        <a href="site.html#features">Features</a>
+        <a href="product.html">Product</a>
+        <a href="security.html" aria-current="page">Security</a>
+        <a href="site.html#faq">FAQ</a>
+        <a href="site.html#team">Team</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">Security &amp; privacy</p>
+      <h1 class="rise" style="--d:.15s">Built to be trusted with your records.</h1>
+      <p class="lede rise" style="--d:.3s">Resident details and rent records are sensitive. Here is how nook is designed to protect them.</p>
+      <p class="status rise" style="--d:.45s"><span class="pill warn">In development</span> These are design commitments for the platform as it is built, not certifications.</p>
+    </section>
+
+    <div class="doc wrap">
+      <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#principles">Principles</a></li><li><a href="#isolation">Data separation</a></li><li><a href="#access">Accounts</a></li><li><a href="#privacy">Resident privacy</a></li><li><a href="#records">Records</a></li><li><a href="#honest">Transparency</a></li></ul></aside>
+      <div class="doc-main">
+
+        <section class="dsec" id="principles" aria-labelledby="pr-h">
+          <p class="kick reveal">Principles</p>
+          <h2 id="pr-h" class="reveal">Four ideas guide every decision.</h2>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>Collect less</h4><p>Every stored detail is a detail that can leak. nook collects only what a named workflow uses, and the pilot does not collect identity documents at all.</p></div>
+            <div class="mini"><h4>Keep organisations apart</h4><p>One property business must never see another’s residents or finances. Separation is designed in from the first version, not added later.</p></div>
+            <div class="mini"><h4>Never rewrite financial history</h4><p>Posted records can’t be edited or deleted. Corrections are new records, so every balance can be explained.</p></div>
+            <div class="mini"><h4>Least privilege</h4><p>People get the access their role needs and nothing more, and every sensitive action leaves a trail.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="isolation" aria-labelledby="iso-h">
+          <p class="kick reveal">Separation</p>
+          <h2 id="iso-h" class="reveal">Your data stays yours.</h2>
+          <p class="lead reveal">nook serves many independent properties from one platform, so isolation matters more than almost anything else.</p>
+          <ul class="ticks reveal">
+            <li>Which organisation you belong to is decided by the server, never by something sent from the browser</li>
+            <li>Asking for another organisation’s record gets “not found”, so nothing is revealed about whether it exists</li>
+            <li>Isolation is checked across lists, reports, exports and background jobs, not only single pages</li>
+            <li>Cross-organisation tests must pass before any release</li>
+          </ul>
+        </section>
+
+        <section class="dsec" id="access" aria-labelledby="acc-h">
+          <p class="kick reveal">Accounts</p>
+          <h2 id="acc-h" class="reveal">Careful with who gets in.</h2>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>No public sign-up</h4><p>Accounts are created by the owner or by invitation.</p></div>
+            <div class="mini"><h4>Revocable sessions</h4><p>Sign-ins can be ended from the server, and sessions are reset when a role changes.</p></div>
+            <div class="mini"><h4>Safe recovery</h4><p>Password recovery uses single-use, short-lived tokens. There are no security questions.</p></div>
+            <div class="mini"><h4>Permissions on the server</h4><p>Every action is checked there, and nobody can grant a permission they don’t hold.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="privacy" aria-labelledby="pv-h">
+          <p class="kick reveal">Resident privacy</p>
+          <h2 id="pv-h" class="reveal">Residents’ details are not public.</h2>
+          <ul class="ticks reveal">
+            <li>The public bed map shows layout and availability only. No name, contact, document or balance is reachable from a public page</li>
+            <li>Warden and front-desk roles have no financial or document access by default</li>
+            <li>Sensitive incident records will have restricted access before they are ever built</li>
+            <li>Phone numbers are personal data and are collected for a stated purpose with a defined retention</li>
+          </ul>
+        </section>
+
+        <section class="dsec" id="records" aria-labelledby="rec-h">
+          <p class="kick reveal">Records</p>
+          <h2 id="rec-h" class="reveal">An audit trail you can rely on.</h2>
+          <div class="grid2 reveal">
+            <div class="mini"><h4>Append-only history</h4><p>Who did what, to what, and when. Inventory and stay changes are never overwritten.</p></div>
+            <div class="mini"><h4>Backups you can restore</h4><p>A backup only counts once a restore has been tested, so that’s the bar nook holds itself to.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="honest" aria-labelledby="hon-h">
+          <p class="kick reveal">Transparency</p>
+          <h2 id="hon-h" class="reveal">What we don’t claim.</h2>
+          <div class="callout reveal"><b>nook is still being built.</b> It has not yet had an independent security audit or penetration test, and we make no claim of compliance with any specific regulation. We’ll say so when that changes, rather than before.</div>
+          <p class="reveal">Questions about security or privacy? Write to <a class="textlink" href="mailto:hello@trynook.in">hello@trynook.in</a>.</p>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="site.html#features">Features</a><a href="product.html">Product</a><a href="security.html">Security</a><a href="site.html#faq">FAQ</a><a href="site.html#team">Team</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>

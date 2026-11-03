@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nook Product — how it works in detail</title>
+  <meta name="description" content="How nook handles property inventory, admissions, residents, finance and roles for hostels, PGs and co-living properties.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="assets/nook-favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/png/nook-favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/png/nook-favicon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="nook">
+  <meta property="og:title" content="nook Product — how it works in detail">
+  <meta property="og:description" content="nook is a management platform for hostels, PGs and co-living properties.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="nav-logo" href="site.html" aria-label="nook home"><img src="assets/svg/nook-logo-primary.svg" alt="nook" height="26"></a>
+      <nav aria-label="Primary">
+        <a href="site.html#features">Features</a>
+        <a href="product.html" aria-current="page">Product</a>
+        <a href="security.html">Security</a>
+        <a href="site.html#faq">FAQ</a>
+        <a href="site.html#team">Team</a>
+      </nav>
+      <a class="btn btn-sm" href="mailto:hello@trynook.in">Get in touch</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero">
+      <p class="kicker rise" style="--d:.05s">Product</p>
+      <h1 class="rise" style="--d:.15s">How nook works, in detail.</h1>
+      <p class="lede rise" style="--d:.3s">The property, the people and the money: how each part is designed, and how they connect.</p>
+      <p class="status rise" style="--d:.45s"><span class="pill warn">In development</span> This page describes how nook is designed to work. Modules are being built and verified in stages.</p>
+    </section>
+
+    <div class="doc wrap">
+      <aside class="toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#inventory">Property &amp; inventory</a></li><li><a href="#admission">Admission &amp; allocation</a></li><li><a href="#residents">Residents &amp; stays</a></li><li><a href="#finance">Finance</a></li><li><a href="#roles">Roles &amp; permissions</a></li><li><a href="#operations">Operations</a></li></ul></aside>
+      <div class="doc-main">
+
+        <section class="dsec" id="inventory" aria-labelledby="inv-h">
+          <p class="kick reveal">01 · Property</p>
+          <h2 id="inv-h" class="reveal">Property &amp; inventory</h2>
+          <p class="lead reveal">Everything starts with what physically exists: buildings, floors, rooms and individual beds. Nothing else can be correct until this is.</p>
+
+          <h3 class="reveal">Set up by the owner, without a developer</h3>
+          <ol class="stepsx reveal">
+            <li><b>Create the organisation and owner account.</b> No public self-service sign-up during the pilot.</li>
+            <li><b>Add a property:</b> name, address, timezone and the settings the hostel actually uses.</li>
+            <li><b>Define buildings and floors,</b> in order, so “above” and “below” mean something.</li>
+            <li><b>Create rooms</b> using the labels the property already uses.</li>
+            <li><b>Add and label beds</b> inside each room.</li>
+            <li><b>Position beds on a floor layout</b> (optional) to power the interactive map.</li>
+            <li><b>Invite staff</b> and grant permissions per property.</li>
+          </ol>
+
+          <div class="callout reveal"><b>Your vocabulary, not ours.</b> If your hostel calls a room “Annexe 2”, nook calls it “Annexe 2”. Renaming inventory to fit a tidy scheme means staff keep a mental translation table, and it fails at the worst moment.</div>
+
+          <h3 class="reveal">Five bed states, kept separate from occupancy</h3>
+          <p class="reveal">Whether a bed is usable and whether someone lives in it are different questions. Mixing them makes “under maintenance” look like “occupied” and spoils your occupancy reports.</p>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">State</th><th scope="col">Meaning</th><th scope="col">Can be allocated?</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><i class="sw free"></i>Available</th><td>Usable and unoccupied for the period in question</td><td>Yes</td></tr>
+              <tr><th scope="row"><i class="sw taken"></i>Occupied</th><td>An active assignment covers the period</td><td>No</td></tr>
+              <tr><th scope="row"><i class="sw blocked"></i>Blocked</th><td>Deliberately withheld: staff room, storage, held for a returning resident</td><td>No</td></tr>
+              <tr><th scope="row"><i class="sw maint"></i>Under maintenance</th><td>Temporarily unusable</td><td>No</td></tr>
+              <tr><th scope="row"><i class="sw res"></i>Reserved</th><td>Held pending a decision, if the owner chooses to allow holds</td><td>Only if enabled</td></tr>
+            </tbody></table></div>
+
+          <div class="grid3 reveal">
+            <div class="mini"><h4>Occupancy is derived</h4><p>It comes from dated assignments, never from a flag on the bed, so a late checkout can’t leave the record quietly wrong.</p></div>
+            <div class="mini"><h4>Changes are conservative</h4><p>nook refuses to delete or block a bed someone is living in, and names the exact records in the way.</p></div>
+            <div class="mini"><h4>History never disappears</h4><p>A bed that has ever been used is deactivated, not deleted, so old receipts still show the right label.</p></div>
+          </div>
+          <p class="reveal">Every inventory change records who made it, when, and the before and after. That makes “who was in bed 203C last March?” answerable, which matters in deposit disputes and verification enquiries.</p>
+          <p class="reveal"><b>Several properties?</b> Adding another needs no developer. Owners see reports across properties, while staff stay scoped to the properties they’re assigned.</p>
+        </section>
+
+        <section class="dsec" id="admission" aria-labelledby="adm-h">
+          <p class="kick reveal">02 · Admissions</p>
+          <h2 id="adm-h" class="reveal">Admission &amp; allocation</h2>
+          <p class="lead reveal">From first enquiry to a committed bed, and on into the stay.</p>
+
+          <ol class="flow reveal" aria-label="Admission and stay lifecycle">
+            <li style="--i:0">Enquiry</li><li style="--i:1">Review</li><li style="--i:2">Approved</li><li style="--i:3">Allocated</li><li style="--i:4">Checked in</li><li style="--i:5">Active stay</li><li style="--i:6">Notice given</li><li style="--i:7">Checkout</li>
+          </ol>
+
+          <div class="callout reveal"><b>People decide who is admitted.</b> Many hostels approve residents by hand, and that’s a screening decision, not paperwork. nook reproduces that: an enquiry reaches staff, staff decide, and only then is a bed allocated. Instant allotment stays off unless the owner approves it.</div>
+
+          <h3 class="reveal">Choosing a bed doesn’t reserve it</h3>
+          <p class="reveal">The map shows availability at the moment you look. A choice travels with the enquiry as a preference, and if the bed is taken before approval, the person is told plainly and offered comparable alternatives.</p>
+
+          <h3 class="reveal">Approval is atomic, so double-booking can’t happen</h3>
+          <ol class="atomic reveal">
+            <li><b>Staff review</b> the enquiry and see live availability, not what it was when the enquiry came in.</li>
+            <li><b>The server locks the bed</b> inside a single transaction.</li>
+            <li><b>Availability is re-checked</b> against current assignments, never against anything the browser sent.</li>
+            <li><b>Everything is verified:</b> the resident, the bed, the organisation and that the stage change is allowed.</li>
+            <li><b>One write</b> records the assignment, updates the bed and moves the stay forward together, or none of it happens.</li>
+          </ol>
+          <p class="reveal">If two staff approve the same bed at the same moment, exactly one succeeds and the other is told why.</p>
+        </section>
+
+        <section class="dsec" id="residents" aria-labelledby="res-h">
+          <p class="kick reveal">03 · People</p>
+          <h2 id="res-h" class="reveal">Residents &amp; stays</h2>
+          <p class="lead reveal">A person, their stays and their bed history are held separately, so none overwrites another.</p>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Record</th><th scope="col">What it holds</th><th scope="col">How long it lasts</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Resident</th><td>The person: name, contact details and only the fields a workflow really needs</td><td>Across stays; retained after departure per policy</td></tr>
+              <tr><th scope="row">Stay</th><td>One admission to one departure: property, dates, state and the rent terms</td><td>One stay</td></tr>
+              <tr><th scope="row">Assignment</th><td>Which bed, over which dates, who recorded it and why</td><td>Append-only; one per room change</td></tr>
+              <tr><th scope="row">Lifecycle event</th><td>Each transition with who and when</td><td>Permanent</td></tr>
+            </tbody></table></div>
+          <div class="grid3 reveal">
+            <div class="mini"><h4>Returning residents</h4><p>Recognised, not duplicated, and their earlier history stays intact.</p></div>
+            <div class="mini"><h4>Room moves</h4><p>Recorded as new assignments, so every past charge and receipt keeps its context.</p></div>
+            <div class="mini"><h4>Collect less</h4><p>Every field has a cost, so nook collects only what a named workflow uses.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="finance" aria-labelledby="fin2-h">
+          <p class="kick reveal">04 · Money</p>
+          <h2 id="fin2-h" class="reveal">Finance</h2>
+          <p class="lead reveal">The part of nook designed to answer one question: “who owes what, and why?”</p>
+          <div class="callout reveal"><b>nook records money. It does not hold money.</b> Residents pay the property directly by cash, UPI or bank transfer. nook records what arrived and reconciles it against what was owed. It operates no wallet and processes no payments.</div>
+
+          <h3 class="reveal">Six records, one derived number</h3>
+          <div class="recs reveal">
+            <div><b>Charge</b><span>A claim for a billing period. The amount is frozen when issued.</span></div>
+            <div><b>Payment</b><span>Money that arrived, with its method and reference.</span></div>
+            <div><b>Allocation</b><span>Links one payment to one charge, for an amount.</span></div>
+            <div><b>Adjustment</b><span>A signed correction with a reason and an approver.</span></div>
+            <div><b>Reversal</b><span>Negates a posted record. The original stays visible.</span></div>
+            <div><b>Deposit</b><span>A liability held separately. Never mixed into rent.</span></div>
+          </div>
+          <div class="formula reveal" role="group" aria-label="Balance formula"><span>Outstanding balance</span><b>=</b><span>charges + debit adjustments</span><b>−</b><span>allocations</span><b>−</b><span>credit adjustments</span><em>computed every time, never stored as truth</em></div>
+
+          <h3 class="reveal">Five rules that keep the books honest</h3>
+          <ol class="atomic reveal">
+            <li><b>Money is stored as whole paise,</b> never as floating-point numbers, so rounding errors can’t creep in.</li>
+            <li><b>Nothing posted is edited or deleted.</b> A correction is a new record that points back at the old one.</li>
+            <li><b>Balances are computed from the records,</b> and any mismatch raises an alert instead of being quietly patched.</li>
+            <li><b>Allocations are limited on both sides:</b> a payment can’t be spread beyond what it was, nor a charge paid beyond what it was.</li>
+            <li><b>Duplicates are blocked by the database itself,</b> so a retried request can’t record the same payment twice.</li>
+          </ol>
+          <div class="grid3 reveal">
+            <div class="mini"><h4>Billing follows each resident</h4><p>A resident admitted on the 17th is billed on the 17th, not on a month-end batch.</p></div>
+            <div class="mini"><h4>Deposits stay out of revenue</h4><p>A deposit is a liability with its own life cycle, kept out of every collection figure by design.</p></div>
+            <div class="mini"><h4>Receipts for every payment</h4><p>Cash, UPI and bank transfers are recorded against the right charge, each with a receipt.</p></div>
+          </div>
+        </section>
+
+        <section class="dsec" id="roles" aria-labelledby="roles2-h">
+          <p class="kick reveal">05 · Access</p>
+          <h2 id="roles2-h" class="reveal">Roles &amp; permissions</h2>
+          <p class="lead reveal">Everyone sees what their job needs, and nothing more.</p>
+          <div class="tblwrap reveal"><table class="tbl">
+            <thead><tr><th scope="col">Role</th><th scope="col">Needs from nook</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Owner / partner</th><td>Occupancy and dues at a glance, financial reports partners can agree on, control over who can do what</td></tr>
+              <tr><th scope="row">Property manager</th><td>Admissions, bed allocation, resident lifecycle and daily follow-up on arrears</td></tr>
+              <tr><th scope="row">Finance clerk / cashier</th><td>Record each payment against the right charge, issue receipts, reconcile cash and transfers</td></tr>
+              <tr><th scope="row">Warden / front desk</th><td>Who is in which bed and day-to-day tasks, with no financial or document access by default</td></tr>
+            </tbody></table></div>
+          <p class="reveal">Access is granted <b>per property</b>, not per organisation: a manager responsible for one of three properties sees one. Permissions are checked on the server, and nobody can grant a permission they don’t hold themselves.</p>
+        </section>
+
+        <section class="dsec" id="operations" aria-labelledby="ops-h">
+          <p class="kick reveal">06 · Day to day</p>
+          <h2 id="ops-h" class="reveal">Operations <span class="pill no">After the pilot</span></h2>
+          <p class="lead reveal">Deliberately light. nook is a hostel management product, not a maintenance product.</p>
+          <div class="grid3 reveal">
+            <div class="mini"><h4>Maintenance requests</h4><p>Log what’s broken, who’s on it and whether it’s fixed. Recurring faults per room become visible.</p></div>
+            <div class="mini"><h4>Complaints</h4><p>Service feedback such as noise or cleanliness, visible to operational staff.</p></div>
+            <div class="mini"><h4>Reports</h4><p>Open requests by age and category, resolution times and repeat issues, all from the source records.</p></div>
+          </div>
+          <p class="reveal">Sensitive incident records will only be built together with a proper access model, because a free-text box with no restrictions is worse than none.</p>
+        </section>
+
+      </div>
+    </div>
+
+    <section class="cta reveal" aria-labelledby="cta-h">
+      <h2 id="cta-h">Run a hostel or PG?</h2>
+      <p>Tell us about your property and we’ll get back to you.</p>
+      <a class="btn btn-light" href="mailto:hello@trynook.in">Get in touch</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-top">
+        <img src="assets/svg/nook-logo-primary.svg" alt="nook" height="24">
+        <nav aria-label="Footer"><a href="site.html#features">Features</a><a href="product.html">Product</a><a href="security.html">Security</a><a href="site.html#faq">FAQ</a><a href="site.html#team">Team</a><a href="mailto:hello@trynook.in">Contact</a></nav>
+      </div>
+      <p class="small">© 2026 nook · trynook.in · Developed by Atharva Vavhal</p>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="contact" aria-labelledby="contact-h">
+    <form id="contact-form" method="post" novalidate>
+      <button class="close" type="button" id="contact-close" aria-label="Close">×</button>
+      <h2 id="contact-h">Get in touch</h2>
+      <p class="section-sub">Tell us a bit about what you’re looking for and we’ll get back to you.</p>
+
+      <label for="cf-name">Name</label>
+      <input id="cf-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="cf-email">Email</label>
+      <input id="cf-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+
+      <label for="cf-msg">Message</label>
+      <textarea id="cf-msg" name="message" rows="4" required></textarea>
+
+      <!-- honeypot: real users never see or fill this -->
+      <input class="hp" name="_gotcha" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <p class="form-msg" id="cf-status" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="cf-submit">Send message</button>
+
+      <div class="done" id="cf-done" tabindex="-1">
+        <p class="done-icon" aria-hidden="true">✓</p>
+        <h3 id="cf-done-title">Message sent</h3>
+        <p id="cf-done-text">Thanks! We’ve got your message and will reply soon.</p>
+        <button class="btn" type="button" id="cf-done-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contact.js"></script>
+  <script src="reveal.js"></script>
+  <script src="page.js"></script>
+</body>
+</html>
