@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "^/(?!ecosystem/(?:shared|app)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "app.trynook.in" } }],
+      "dest": "/ecosystem/app/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    },
+    {
+      "src": "^/(?!ecosystem/(?:shared|api)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "api.trynook.in" } }],
+      "dest": "/ecosystem/api/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    },
+    {
+      "src": "^/(?!ecosystem/(?:shared|superadmin)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "superadmin.trynook.in" } }],
+      "dest": "/ecosystem/superadmin/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    },
+    {
+      "src": "^/(?!ecosystem/(?:shared|resident)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "resident.trynook.in" } }],
+      "dest": "/ecosystem/resident/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    },
+    {
+      "src": "^/(?!ecosystem/(?:shared|status)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "status.trynook.in" } }],
+      "dest": "/ecosystem/status/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    },
+    {
+      "src": "^/(?!ecosystem/(?:shared|docs)/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "docs.trynook.in" } }],
+      "dest": "/ecosystem/docs/index.html",
+      "headers": { "X-Robots-Tag": "noindex, nofollow" }
+    }
+  ]
+}
