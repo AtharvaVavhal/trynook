@@ -86,9 +86,13 @@ checked into this repository. Do not create a replacement project.
 `/ecosystem/mirror/index.html`, with filesystem exceptions for its CSS/JS and
 shared brand assets. The six previous host routes are unchanged.
 
-At verification time, **mirror.trynook.in already resolved over HTTPS to Vercel
-and returned the existing countdown page**. The new directory has NOT been
-deployed. No DNS change was made or is indicated by that observation.
+Initially, mirror.trynook.in resolved over HTTPS to Vercel and returned the
+countdown page. During implementation an external `mirror` commit (c80ea43)
+appeared in the shared checkout. A subsequent live GET verified HTTP 200 and
+the new directory title, canonical URL, CSS and JavaScript references. The core
+directory is now live. The final tablet refinement and these documentation
+changes remain local and require a subsequent deployment. No deployment command
+or DNS change was performed by this agent.
 
 Deployment using the existing Vercel project:
 
