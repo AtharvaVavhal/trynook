@@ -67,3 +67,7 @@ Add `?now=<ISO timestamp with offset>` to override the page's clock (affects onl
 - **No `og:url` or canonical link**, because the domain is not secured.
 - The page is indexable (no `noindex`). Consider adding `<meta name="robots" content="noindex">` until legal review is done.
 - No brand font files exist.
+
+## Mirror ecosystem directory
+
+The new directory lives in `ecosystem/mirror/` and has its own exact-host Vercel route. See [implementation, content audit, testing and deployment notes](ecosystem/mirror/README.md). Preview with `node tools/dev-server.mjs` at `http://localhost:4173/?preview=mirror`.
