@@ -5,7 +5,7 @@
 //
 // It applies the real vercel.json host routes, so behaviour matches production.
 // Two local-only ways to pick a subdomain experience:
-//   http://localhost:4173/?preview=app        (app | api | superadmin | resident | status | docs)
+//   http://localhost:4173/?preview=app        (mirror | app | api | superadmin | resident | status | docs)
 //   http://app.localhost:4173/                (browsers resolve *.localhost to loopback)
 // Both are honoured ONLY when the request's own Host is loopback. This file is
 // never deployed (see .vercelignore); production routing uses the Host alone.

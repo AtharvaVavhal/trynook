@@ -22,11 +22,11 @@ const out = process.argv[2] || 'screenshots';
 const only = process.argv.slice(3);
 mkdirSync(out, { recursive: true });
 
-const PAGES = ['app', 'api', 'superadmin', 'resident', 'status', 'docs'];
+const PAGES = ['mirror', 'app', 'api', 'superadmin', 'resident', 'status', 'docs'];
 const SIZES = { desktop: 1440, tablet: 768, mobile: 390 };
 const targets = (only.length ? only : [...PAGES, 'root']);
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {});
 let problems = 0;
 for (const key of targets) {
   for (const [label, width] of Object.entries(SIZES)) {

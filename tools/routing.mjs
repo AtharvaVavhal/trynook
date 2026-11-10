@@ -10,6 +10,7 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 /** The exact hostname allowlist. Single source of truth for tooling; verify.mjs
  *  checks that vercel.json matches it rule for rule. */
 export const HOSTS = Object.freeze({
+  'mirror.trynook.in': 'mirror',
   'app.trynook.in': 'app',
   'api.trynook.in': 'api',
   'superadmin.trynook.in': 'superadmin',

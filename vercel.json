@@ -2,6 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
+      "src": "^/(?!ecosystem/mirror/|assets/)(.*)$",
+      "has": [{ "type": "host", "value": { "eq": "mirror.trynook.in" } }],
+      "dest": "/ecosystem/mirror/index.html"
+    },
+    {
       "src": "^/(?!ecosystem/(?:shared|app)/|assets/)(.*)$",
       "has": [{ "type": "host", "value": { "eq": "app.trynook.in" } }],
       "dest": "/ecosystem/app/index.html",
