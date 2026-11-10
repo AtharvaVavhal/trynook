@@ -1690,7 +1690,7 @@ h1 span  {
 
 }
 
-/* Match the official Forge attribution on the existing light ecosystem pages. */
+/* Official Forge attribution using the supplied white-on-ink asset. */
 .footer-bottom {
   align-items: center;
 }
@@ -1702,8 +1702,8 @@ h1 span  {
   white-space: nowrap;
 }
 .forge-credit img {
-  width: auto;
-  height: 20px;
+  width: 116px;
+  height: 24px;
 }
 @media (max-width: 760px) {
   .footer-bottom .forge-credit {
