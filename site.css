@@ -522,3 +522,11 @@ h2 .pill { font-size: 12px; letter-spacing: 0; }
 .stage .scene .art { --k: calc(100cqh / 540); left: calc(50cqw - 883 * var(--k)); top: calc(-190 * var(--k)); }
 .fc1 { left: 14%; top: 20%; } .fc2 { right: 14%; top: 24%; } .fc3 { left: 16%; bottom: 14%; } .fc4 { right: 15%; bottom: 13%; }
 @media (max-width: 860px) { .stage { height: clamp(280px, 70vw, 420px); } .fc1 { left: 4%; } .fc2 { right: 4%; } }
+
+/* hero performance on phones: the one-time fade-in stays, but the endless subtle loops
+   (breathe, drift, flicker) force the blurred SVG layers to repaint forever, which costs
+   battery and frames on mid-range phones. Their changes are barely visible, so stop them
+   on small and touch screens. */
+@media (max-width: 860px), (pointer: coarse) {
+  .breathe, .drift, .flicker { animation: none; opacity: 1; transform: none; }
+}
