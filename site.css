@@ -530,3 +530,6 @@ h2 .pill { font-size: 12px; letter-spacing: 0; }
 @media (max-width: 860px), (pointer: coarse) {
   .breathe, .drift, .flicker { animation: none; opacity: 1; transform: none; }
 }
+
+.hero-note { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+.hero .lede { max-width: 44ch; }
